@@ -14,6 +14,13 @@ public class BeerchipViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+      let   window = UIWindow(frame: UIScreen.main.bounds)
+        let nav1 = UINavigationController()
+        let mainView = BeerchipViewController(nibName: nil, bundle: nil) //ViewController = Name of your controller
+        nav1.viewControllers = [mainView]
+        window.rootViewController = nav1
+        window.makeKeyAndVisible()
 
         viewRedeemBtn.layer.cornerRadius = 8.0
         // Do any additional setup after loading the view.
@@ -21,7 +28,7 @@ public class BeerchipViewController: UIViewController {
 
     @IBAction func viewRedeemBtnAction(_ sender: Any) {
         
-        
+       performSegue(withIdentifier: "toRedeemVCSegue", sender: self)
     }
     
 }

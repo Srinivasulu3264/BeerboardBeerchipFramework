@@ -13,6 +13,7 @@
 		86CC7C57203C13CC00126896 /* BeerchipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC7C56203C13CC00126896 /* BeerchipViewController.swift */; };
 		86CC7C59203C140B00126896 /* BeerchipStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86CC7C58203C140B00126896 /* BeerchipStoryboard.storyboard */; };
 		86CC7C5B203C1A1700126896 /* BeerchipAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86CC7C5A203C1A1700126896 /* BeerchipAssets.xcassets */; };
+		86CC7C97203C257D00126896 /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC7C96203C257D00126896 /* RedeemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		86CC7C56203C13CC00126896 /* BeerchipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerchipViewController.swift; sourceTree = "<group>"; };
 		86CC7C58203C140B00126896 /* BeerchipStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BeerchipStoryboard.storyboard; sourceTree = "<group>"; };
 		86CC7C5A203C1A1700126896 /* BeerchipAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BeerchipAssets.xcassets; sourceTree = "<group>"; };
+		86CC7C96203C257D00126896 /* RedeemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				86CC7C3F203C132300126896 /* BeerboardBeerchipFramework.h */,
 				86CC7C56203C13CC00126896 /* BeerchipViewController.swift */,
+				86CC7C96203C257D00126896 /* RedeemViewController.swift */,
 				86CC7C58203C140B00126896 /* BeerchipStoryboard.storyboard */,
 				86CC7C5A203C1A1700126896 /* BeerchipAssets.xcassets */,
 				86CC7C40203C132300126896 /* Info.plist */,
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86CC7C97203C257D00126896 /* RedeemViewController.swift in Sources */,
 				86CC7C57203C13CC00126896 /* BeerchipViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

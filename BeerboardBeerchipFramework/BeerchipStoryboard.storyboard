@@ -141,11 +141,27 @@
                     <size key="freeformSize" width="375" height="150"/>
                     <connections>
                         <outlet property="viewRedeemBtn" destination="C2I-YG-PPy" id="Hpa-qt-d3c"/>
+                        <segue destination="8d3-u0-8kz" kind="show" identifier="toRedeemVCSegue" id="vE0-IG-dYN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTu-gs-KF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-450.39999999999998" y="103.89805097451276"/>
+            <point key="canvasLocation" x="-438" y="65"/>
+        </scene>
+        <!--Redeem View Controller-->
+        <scene sceneID="ftZ-tE-5dm">
+            <objects>
+                <viewController storyboardIdentifier="RedeemViewController" id="8d3-u0-8kz" customClass="RedeemViewController" customModule="BeerboardBeerchipFramework" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ql1-eK-Dwz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NbN-lG-MiO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZuI-FP-wyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="297" y="65"/>
         </scene>
     </scenes>
     <resources>
