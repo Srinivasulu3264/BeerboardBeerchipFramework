@@ -15,9 +15,7 @@ public class BeerchipViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-     
-
-        viewRedeemBtn.layer.cornerRadius = 8.0
+      viewRedeemBtn.layer.cornerRadius = 8.0
         // Do any additional setup after loading the view.
     }
 
@@ -25,10 +23,6 @@ public class BeerchipViewController: UIViewController {
         
        performSegue(withIdentifier: "toRedeemVCSegue", sender: self)
         
-        let vc = RedeemViewController(nibName: "RedeemViewController",
-                                      bundle: nil)
-        navigationController?.pushViewController(vc,
-                                                 animated: true)
     }
     
 }
