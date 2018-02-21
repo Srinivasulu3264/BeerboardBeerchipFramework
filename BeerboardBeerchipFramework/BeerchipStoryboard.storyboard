@@ -146,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTu-gs-KF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-438" y="65"/>
+            <point key="canvasLocation" x="-673" y="-71"/>
         </scene>
         <!--Redeem View Controller-->
         <scene sceneID="ftZ-tE-5dm">
@@ -155,13 +155,82 @@
                     <view key="view" contentMode="scaleToFill" id="ql1-eK-Dwz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Haz-t2-sVD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME, SUNDAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDo-GZ-Lsm">
+                                        <rect key="frame" x="8" y="8" width="180" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="DPK-w7-NYg"/>
+                                            <constraint firstAttribute="width" constant="180" id="kA0-zr-tNh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your current balance is" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBx-Sz-vjy">
+                                        <rect key="frame" x="8" y="51" width="164.5" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="DaF-Sj-WxH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 7.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF9-6g-cad">
+                                        <rect key="frame" x="8" y="80" width="53.5" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="ZkF-3r-1YB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8n-DA-xvM">
+                                        <rect key="frame" x="225" y="50" width="140" height="40"/>
+                                        <color key="backgroundColor" red="1" green="0.49847649700000002" blue="0.26420443910000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="FG5-SL-hZH"/>
+                                            <constraint firstAttribute="width" constant="140" id="izj-L5-e5v"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="REDEEM" image="view-redeem-icon">
+                                            <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.71494346857070923" green="0.909107506275177" blue="0.44203096628189087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="cBx-Sz-vjy" firstAttribute="top" secondItem="TDo-GZ-Lsm" secondAttribute="bottom" constant="8" id="7Yr-Oc-DI9"/>
+                                    <constraint firstItem="p8n-DA-xvM" firstAttribute="top" secondItem="Haz-t2-sVD" secondAttribute="top" constant="50" id="P0O-gC-mSF"/>
+                                    <constraint firstItem="TDo-GZ-Lsm" firstAttribute="leading" secondItem="Haz-t2-sVD" secondAttribute="leading" constant="8" id="ZyX-Cf-N6Z"/>
+                                    <constraint firstItem="wF9-6g-cad" firstAttribute="leading" secondItem="Haz-t2-sVD" secondAttribute="leading" constant="8" id="a9T-Hu-2oB"/>
+                                    <constraint firstItem="cBx-Sz-vjy" firstAttribute="leading" secondItem="Haz-t2-sVD" secondAttribute="leading" constant="8" id="bkh-cQ-xez"/>
+                                    <constraint firstItem="wF9-6g-cad" firstAttribute="top" secondItem="cBx-Sz-vjy" secondAttribute="bottom" constant="8" id="gf9-rL-8Dk"/>
+                                    <constraint firstAttribute="trailing" secondItem="p8n-DA-xvM" secondAttribute="trailing" constant="10" id="jyi-IO-3Hu"/>
+                                    <constraint firstItem="TDo-GZ-Lsm" firstAttribute="top" secondItem="Haz-t2-sVD" secondAttribute="top" constant="8" id="sTR-sm-0RV"/>
+                                    <constraint firstAttribute="height" constant="160" id="zID-sN-PtY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Haz-t2-sVD" firstAttribute="top" secondItem="ql1-eK-Dwz" secondAttribute="top" id="VGE-tg-Tcp"/>
+                            <constraint firstItem="Haz-t2-sVD" firstAttribute="leading" secondItem="NbN-lG-MiO" secondAttribute="leading" id="eMH-FX-n5Z"/>
+                            <constraint firstItem="Haz-t2-sVD" firstAttribute="trailing" secondItem="NbN-lG-MiO" secondAttribute="trailing" id="uIz-GW-iHg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NbN-lG-MiO"/>
                     </view>
+                    <connections>
+                        <outlet property="redeemButtomConatinerView" destination="Haz-t2-sVD" id="X1w-V7-6RR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZuI-FP-wyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="297" y="65"/>
+            <point key="canvasLocation" x="125.59999999999999" y="-78.710644677661179"/>
         </scene>
     </scenes>
     <resources>

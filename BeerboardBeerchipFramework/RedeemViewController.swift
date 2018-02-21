@@ -10,9 +10,11 @@ import UIKit
 
 class RedeemViewController: UIViewController {
 
+    @IBOutlet weak var redeemButtomConatinerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        redeemButtomConatinerView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
         // Do any additional setup after loading the view.
     }
 
