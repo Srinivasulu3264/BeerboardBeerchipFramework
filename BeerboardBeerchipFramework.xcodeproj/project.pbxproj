@@ -11,6 +11,8 @@
 		869A34EF203FD13A00461C68 /* RedeemviewBeerchipTableSubTitlesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A34EE203FD13A00461C68 /* RedeemviewBeerchipTableSubTitlesTableViewCell.swift */; };
 		869A34F1203FD2A800461C68 /* BeerChipTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A34F0203FD2A800461C68 /* BeerChipTableViewController.swift */; };
 		869A34F3203FD4FF00461C68 /* BeerchipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A34F2203FD4FF00461C68 /* BeerchipTableViewCell.swift */; };
+		869A352F203FF9C500461C68 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A352E203FF9C500461C68 /* LocationViewController.swift */; };
+		869A3531204003AC00461C68 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A3530204003AC00461C68 /* LocationTableViewCell.swift */; };
 		86CC7C46203C132300126896 /* BeerboardBeerchipFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CC7C3C203C132300126896 /* BeerboardBeerchipFramework.framework */; };
 		86CC7C4B203C132300126896 /* BeerboardBeerchipFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC7C4A203C132300126896 /* BeerboardBeerchipFrameworkTests.swift */; };
 		86CC7C4D203C132300126896 /* BeerboardBeerchipFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 86CC7C3F203C132300126896 /* BeerboardBeerchipFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,6 +37,8 @@
 		869A34EE203FD13A00461C68 /* RedeemviewBeerchipTableSubTitlesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemviewBeerchipTableSubTitlesTableViewCell.swift; sourceTree = "<group>"; };
 		869A34F0203FD2A800461C68 /* BeerChipTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerChipTableViewController.swift; sourceTree = "<group>"; };
 		869A34F2203FD4FF00461C68 /* BeerchipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerchipTableViewCell.swift; sourceTree = "<group>"; };
+		869A352E203FF9C500461C68 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		869A3530204003AC00461C68 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		86CC7C3C203C132300126896 /* BeerboardBeerchipFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BeerboardBeerchipFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86CC7C3F203C132300126896 /* BeerboardBeerchipFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeerboardBeerchipFramework.h; sourceTree = "<group>"; };
 		86CC7C40203C132300126896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				869A34EE203FD13A00461C68 /* RedeemviewBeerchipTableSubTitlesTableViewCell.swift */,
 				869A34F0203FD2A800461C68 /* BeerChipTableViewController.swift */,
 				869A34F2203FD4FF00461C68 /* BeerchipTableViewCell.swift */,
+				869A352E203FF9C500461C68 /* LocationViewController.swift */,
+				869A3530204003AC00461C68 /* LocationTableViewCell.swift */,
 				86CC7C58203C140B00126896 /* BeerchipStoryboard.storyboard */,
 				86CC7C5A203C1A1700126896 /* BeerchipAssets.xcassets */,
 				86CC7C40203C132300126896 /* Info.plist */,
@@ -223,7 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869A352F203FF9C500461C68 /* LocationViewController.swift in Sources */,
 				869A34EB203FCF0D00461C68 /* RedeemViewBeerchipTableTitleTableViewCell.swift in Sources */,
+				869A3531204003AC00461C68 /* LocationTableViewCell.swift in Sources */,
 				86CC7C97203C257D00126896 /* RedeemViewController.swift in Sources */,
 				869A34F1203FD2A800461C68 /* BeerChipTableViewController.swift in Sources */,
 				869A34F3203FD4FF00461C68 /* BeerchipTableViewCell.swift in Sources */,

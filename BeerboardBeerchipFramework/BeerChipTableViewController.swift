@@ -13,9 +13,11 @@ class BeerChipTableViewController: UIViewController {
     var beerNamesArr = [String]()
     var beerCostArr = [String]()
 
+    @IBOutlet weak var beerchipTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        beerchipTable.tableFooterView = UIView()
         beerNamesArr = ["BUD LIGHT" , "BUD LIGHT LIME" ,"BUDWISER"]
         beerCostArr = ["$11.00","$2.00","$2.00"]
         // Do any additional setup after loading the view.

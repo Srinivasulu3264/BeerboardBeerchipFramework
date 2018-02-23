@@ -545,6 +545,7 @@
                         <outlet property="myBeerChipsBtn" destination="jbJ-2l-iKg" id="7fh-5X-kcK"/>
                         <outlet property="redeemButtomConatinerView" destination="Haz-t2-sVD" id="X1w-V7-6RR"/>
                         <outlet property="redeemButton" destination="p8n-DA-xvM" id="fa4-TR-eTO"/>
+                        <segue destination="2SK-Mm-yeT" kind="presentation" identifier="toLocationSegue" id="Hzs-PN-R7h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZuI-FP-wyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -640,10 +641,97 @@
                         <viewLayoutGuide key="safeArea" id="0a0-sI-zky"/>
                     </view>
                     <size key="freeformSize" width="375" height="410"/>
+                    <connections>
+                        <outlet property="beerchipTable" destination="l5d-8v-fXF" id="b6q-ZJ-9m1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgn-tO-W7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820" y="-102"/>
+            <point key="canvasLocation" x="3940" y="-513"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="VzF-Bf-Gr3">
+            <objects>
+                <viewController id="2SK-Mm-yeT" customClass="LocationViewController" customModule="BeerboardBeerchipFramework" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sL0-Yo-USV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6l-cI-plJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CIm-bV-vAH">
+                                        <rect key="frame" x="10" y="15" width="355" height="602"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="locationCell" rowHeight="92" id="qpd-g6-UK2" customClass="LocationTableViewCell" customModule="BeerboardBeerchipFramework" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="355" height="92"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qpd-g6-UK2" id="j0i-8a-sZ2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="91.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="locationName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYO-F1-qan">
+                                                            <rect key="frame" x="8" y="6" width="131" height="54.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="locationAddress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCr-gz-41R">
+                                                            <rect key="frame" x="8" y="68.5" width="124" height="15"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="15" id="xJR-MW-3KZ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="HCr-gz-41R" secondAttribute="bottom" constant="8" id="W1K-rc-da9"/>
+                                                        <constraint firstItem="HCr-gz-41R" firstAttribute="top" secondItem="lYO-F1-qan" secondAttribute="bottom" constant="8" id="Z9O-y2-601"/>
+                                                        <constraint firstItem="lYO-F1-qan" firstAttribute="top" secondItem="j0i-8a-sZ2" secondAttribute="top" constant="6" id="jmv-0p-FRk"/>
+                                                        <constraint firstItem="HCr-gz-41R" firstAttribute="leading" secondItem="j0i-8a-sZ2" secondAttribute="leading" constant="8" id="nzy-NB-F5w"/>
+                                                        <constraint firstItem="lYO-F1-qan" firstAttribute="leading" secondItem="j0i-8a-sZ2" secondAttribute="leading" constant="8" id="urV-gS-5Z6"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="locationAddessLbl" destination="HCr-gz-41R" id="C6u-rr-hl4"/>
+                                                    <outlet property="locationNameLbl" destination="lYO-F1-qan" id="MKG-eL-Ecy"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="2SK-Mm-yeT" id="jLL-gZ-ePg"/>
+                                            <outlet property="delegate" destination="2SK-Mm-yeT" id="9c0-7i-lLk"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="CIm-bV-vAH" secondAttribute="bottom" constant="30" id="Ilk-Jr-i8L"/>
+                                    <constraint firstAttribute="trailing" secondItem="CIm-bV-vAH" secondAttribute="trailing" constant="10" id="bg0-rP-FDW"/>
+                                    <constraint firstItem="CIm-bV-vAH" firstAttribute="top" secondItem="w6l-cI-plJ" secondAttribute="top" constant="15" id="oYe-Ba-9Kr"/>
+                                    <constraint firstItem="CIm-bV-vAH" firstAttribute="leading" secondItem="w6l-cI-plJ" secondAttribute="leading" constant="10" id="uV7-yg-LYh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="s6g-tZ-Z10" firstAttribute="trailing" secondItem="w6l-cI-plJ" secondAttribute="trailing" id="4wt-eY-pi8"/>
+                            <constraint firstItem="w6l-cI-plJ" firstAttribute="top" secondItem="sL0-Yo-USV" secondAttribute="top" constant="20" id="6RR-qL-cJ2"/>
+                            <constraint firstItem="w6l-cI-plJ" firstAttribute="leading" secondItem="s6g-tZ-Z10" secondAttribute="leading" id="J8P-Q6-Dfv"/>
+                            <constraint firstItem="s6g-tZ-Z10" firstAttribute="bottom" secondItem="w6l-cI-plJ" secondAttribute="bottom" id="VdO-hQ-066"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="s6g-tZ-Z10"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationTable" destination="CIm-bV-vAH" id="HTQ-Me-T50"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dc-Ep-pyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829.60000000000002" y="-79.610194902548727"/>
         </scene>
     </scenes>
     <resources>
