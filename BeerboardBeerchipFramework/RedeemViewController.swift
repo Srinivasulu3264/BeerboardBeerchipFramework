@@ -92,7 +92,6 @@ class RedeemViewController: UIViewController {
         currentBalancedisplayLbl.text = "$7.50"
         myBalanceDisplayLbl.text = "$7.50"
         cashoutBtnView.isHidden = false
-        //  cashoutButtonView.backgroundColor = UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 0.8)
         cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
         
         beerchipTableVC.willMove(toParentViewController: nil)

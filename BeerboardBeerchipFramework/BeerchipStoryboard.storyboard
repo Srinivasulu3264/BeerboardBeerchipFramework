@@ -437,6 +437,10 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="8d3-u0-8kz" id="w9q-8I-XTv"/>
+                                            <outlet property="delegate" destination="8d3-u0-8kz" id="9Ra-bc-7am"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.65161351519999999" green="0.91086238620000004" blue="0.81458413839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
