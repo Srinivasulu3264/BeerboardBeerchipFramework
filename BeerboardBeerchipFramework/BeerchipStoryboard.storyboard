@@ -363,7 +363,6 @@
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="abvLabel" destination="4f8-pD-5FX" id="vw4-8y-qfM"/>
-                                                    <outlet property="beerchips" destination="wYv-p8-Nim" id="whX-dF-Fn5"/>
                                                     <outlet property="beerchipsLbl" destination="wYv-p8-Nim" id="EX4-eR-nke"/>
                                                 </connections>
                                             </tableViewCell>
@@ -432,8 +431,6 @@
                                                     <outlet property="abvValueLbl" destination="rIi-QO-VRB" id="k4y-r0-ySC"/>
                                                     <outlet property="beerSubTitleLbl" destination="Jfj-gt-L6h" id="oBv-7t-qLA"/>
                                                     <outlet property="beerTitleLable" destination="XFv-jo-LZN" id="Xst-By-eOe"/>
-                                                    <outlet property="subTitleLabel" destination="Jfj-gt-L6h" id="zcC-du-D1U"/>
-                                                    <outlet property="titleLable" destination="XFv-jo-LZN" id="zj2-rO-Haz"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -622,11 +619,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="BeerTitleLbl" destination="QP6-A6-CZt" id="LEe-42-wJ1"/>
                                             <outlet property="beerCostLbl" destination="bvL-Ph-kkn" id="hBo-vv-Dv9"/>
-                                            <outlet property="beerLocationLbl" destination="Uid-jd-ynJ" id="AU4-9U-RAe"/>
                                             <outlet property="beerSubTitleLbl" destination="Uid-jd-ynJ" id="sdf-d5-YxW"/>
-                                            <outlet property="beerTitleLbl" destination="QP6-A6-CZt" id="Khh-Y5-qOU"/>
+                                            <outlet property="beerTitleLbl" destination="Uid-jd-ynJ" id="cA8-eV-UCn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
