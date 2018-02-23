@@ -79,7 +79,7 @@ class RedeemViewController: UIViewController {
         cashoutBtnView.isHidden = true
         
         self.addChildViewController(beerchipTableVC)
-        beerchipTableVC.view.frame = CGRect(x: 0, y: 162, width: 375, height: 410)
+        beerchipTableVC.view.frame = CGRect(x: 0, y: 177, width: 375, height: 410)
         self.view.addSubview(beerchipTableVC.view)
         beerchipTableVC.didMove(toParentViewController: self)
     }
