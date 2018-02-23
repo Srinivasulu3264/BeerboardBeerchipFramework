@@ -32,9 +32,16 @@ class RedeemViewController: UIViewController {
     
     @IBOutlet weak var cashoutBtnView: UIView!
     
+     @IBOutlet weak var locationtableConatinerView: UIView!
+    
+     @IBOutlet weak var locationTableView: UITableView!
+    
+    @IBOutlet weak var alphaView: UIView!
     
     var titleArr = [String]()
     var abvValueArr = [String]()
+    var locationArr = [String]()
+    var locationAddreddArr = [String]()
     
     var beerchipTableVC = UIViewController()
     
@@ -57,11 +64,17 @@ class RedeemViewController: UIViewController {
         
         cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
         beerchipTableview.tableFooterView = UIView()
+        
+        locationArr = ["hyderabad","banglore","chennai","mumbai","delhi","vizag","MANHATHAN"]
+        locationAddreddArr = ["155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001"]
+        
+        alphaView.isHidden = true
+        locationtableConatinerView.isHidden = true
     }
 
     @IBAction func redeemBtnAction(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "toLocationSegue", sender: self)
+     
     }
     
     @IBAction func cashoutBnAction(_ sender: Any) {
@@ -69,7 +82,8 @@ class RedeemViewController: UIViewController {
     }
     
     @IBAction func locationIndicatorBtnAction(_ sender: Any) {
-        
+        alphaView.isHidden = false
+        locationtableConatinerView.isHidden = false
     }
     
     @IBAction func myBeerchipsBtnAction(_ sender: Any) {
@@ -122,6 +136,18 @@ extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
             cell.beerTitleLable.text = titleArr[indexPath.row-1]
             cell.beerSubTitleLbl.text = "StLouis,MD"
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if tableView == beerchipTableview {
+            
+        }else{
+            let locationName = locationArr[indexPath.row]
+            locationIndicatorBtn.setTitle(locationName, for: .normal)
+            alphaView.isHidden = true
+            locationtableConatinerView.isHidden = true
         }
     }
 }
