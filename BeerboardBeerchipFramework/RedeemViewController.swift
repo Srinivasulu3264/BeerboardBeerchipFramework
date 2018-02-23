@@ -119,11 +119,17 @@ class RedeemViewController: UIViewController {
 
 extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == beerchipTableview {
         return  titleArr.count+1
+        }else{
+            return locationArr.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+         if tableView == beerchipTableview {
         if indexPath.row == 0 {
             let   cell  = tableView.dequeueReusableCell(withIdentifier: "titleCell") as!RedeemViewBeerchipTableTitleTableViewCell
             cell.beerchipsLbl.text = "BEERCHIPS"
@@ -135,6 +141,13 @@ extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
             cell.abvValueLbl.text = abvValueArr[indexPath.row-1]
             cell.beerTitleLable.text = titleArr[indexPath.row-1]
             cell.beerSubTitleLbl.text = "StLouis,MD"
+            return cell
+        }
+      }
+         else{
+            let   cell  = tableView.dequeueReusableCell(withIdentifier: "locationCell") as!LocationTableViewCell
+            cell.locationNameLbl.text = locationArr[indexPath.row]
+            cell.locationAddessLbl.text = locationAddreddArr[indexPath.row]
             return cell
         }
     }
