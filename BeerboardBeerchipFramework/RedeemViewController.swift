@@ -61,6 +61,7 @@ class RedeemViewController: UIViewController {
 
     @IBAction func redeemBtnAction(_ sender: Any) {
         
+        self.performSegue(withIdentifier: "toLocationSegue", sender: self)
     }
     
     @IBAction func cashoutBnAction(_ sender: Any) {
