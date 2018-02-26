@@ -764,14 +764,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNm-DM-580" userLabel="emptyView">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="15"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="pUd-Ml-76t"/>
+                                                    <constraint firstAttribute="height" constant="15" id="pUd-Ml-76t"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41F-mY-y30">
-                                                <rect key="frame" x="0.0" y="40" width="375" height="60"/>
+                                                <rect key="frame" x="0.0" y="15" width="375" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CASHOUT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6E-TA-YDZ">
                                                         <rect key="frame" x="8" y="8" width="120" height="44"/>
@@ -809,14 +809,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1EB-Qe-Qhd">
-                                                <rect key="frame" x="0.0" y="100" width="375" height="2"/>
+                                                <rect key="frame" x="0.0" y="75" width="375" height="2"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="Xwd-Zt-Gnv"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8b-RR-KTz">
-                                                <rect key="frame" x="0.0" y="102" width="375" height="598"/>
+                                                <rect key="frame" x="0.0" y="77" width="375" height="623"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Cash and Gift Card options" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ul1-XR-Dyo">
                                                         <rect key="frame" x="8" y="8" width="278.5" height="21"/>
@@ -825,7 +825,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Nz0-AZ-F2b">
-                                                        <rect key="frame" x="0.0" y="39" width="375" height="559"/>
+                                                        <rect key="frame" x="0.0" y="39" width="375" height="584"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tfp-oL-vQn">
                                                             <size key="itemSize" width="102" height="90"/>

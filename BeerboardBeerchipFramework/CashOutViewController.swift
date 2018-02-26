@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CashOutViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+class CashOutViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate ,UICollectionViewDelegateFlowLayout{
     
     
 
@@ -23,10 +23,16 @@ class CashOutViewController: UIViewController,UICollectionViewDataSource,UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cashoutCell", for: indexPath)
-        let cashoutImgView = cell .viewWithTag(99) as! UIImageView
-        cashoutImgView.image = #imageLiteral(resourceName: "beer-logo-schells")
+      //  let cashoutImgView = cell .viewWithTag(99) as! UIImageView
+      //  cashoutImgView.image = #imageLiteral(resourceName: "beer-logo-schells")
         return cell
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        
+        return CGSize(width: (self.view.frame.size.width-20.0)/2.0  , height: (self.view.frame.size.height)/3.0  )
     }
 }
 

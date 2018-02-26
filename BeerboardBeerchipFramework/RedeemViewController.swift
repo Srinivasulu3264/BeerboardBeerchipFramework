@@ -74,6 +74,8 @@ class RedeemViewController: UIViewController {
         
         alphaView.isHidden = true
         locationtableConatinerView.isHidden = true
+        
+         cashOutBtnContainerView.isHidden = true
     }
 
     @IBAction func redeemBtnAction(_ sender: Any) {
@@ -86,12 +88,12 @@ class RedeemViewController: UIViewController {
         cashOutVC.willMove(toParentViewController: nil)
         cashOutVC.view.removeFromSuperview()
         cashOutVC.removeFromParentViewController()
+        cashOutBtnContainerView.isHidden = true
     }
-    
-    
-    
+        
     @IBAction func cashoutBnAction(_ sender: Any) {
         
+        cashOutBtnContainerView.isHidden = false
         self.addChildViewController(cashOutVC)
         cashOutVC.view.frame = CGRect(x: 0, y: 162, width: 375, height: 445)
         self.view.addSubview(cashOutVC.view)
