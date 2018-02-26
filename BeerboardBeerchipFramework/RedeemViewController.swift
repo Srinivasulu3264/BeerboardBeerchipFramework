@@ -85,20 +85,38 @@ class RedeemViewController: UIViewController {
     @IBAction func redeemBtnAction(_ sender: Any) {
         
         self.addChildViewController(redeemBeerchipVC)
-        redeemBeerchipVC.view.frame = CGRect(x: 0, y: 177, width: 375, height: 410)
+        redeemBeerchipVC.view.frame = CGRect(x: 0, y: 120, width: 375, height: 445)
         self.view.addSubview(redeemBeerchipVC.view)
         redeemBeerchipVC.didMove(toParentViewController: self)
-        
+        cashOutBtnContainerView.isHidden = false
         externalCashoutBtn.setTitle("REDEEM", for: .normal)
-        
+        redeemButton.setTitle("CASH OUT", for: .normal)
+        currentBalancedisplayLbl.text = "$15.00"
     }
     
     @IBAction func cashoutViewCashOutBtnAction(_ sender: Any) {
         
-        cashOutVC.willMove(toParentViewController: nil)
-        cashOutVC.view.removeFromSuperview()
-        cashOutVC.removeFromParentViewController()
-        cashOutBtnContainerView.isHidden = true
+        if externalCashoutBtn.currentTitle == "REDEEM"
+        {
+            
+            redeemBeerchipVC.willMove(toParentViewController: nil)
+            redeemBeerchipVC.view.removeFromSuperview()
+            redeemBeerchipVC.removeFromParentViewController()
+            cashOutBtnContainerView.isHidden = true
+            beerMenuBtnAction(self)
+             redeemButton.setTitle("REDEEM", for: .normal)
+            currentBalancedisplayLbl.text = "$15.00"
+            myBeerchipsBtnAction(self)
+            
+            
+        }else{
+            
+            cashOutVC.willMove(toParentViewController: nil)
+            cashOutVC.view.removeFromSuperview()
+            cashOutVC.removeFromParentViewController()
+            cashOutBtnContainerView.isHidden = true
+            beerMenuBtnAction(self)
+        }
     }
         
     @IBAction func cashoutBnAction(_ sender: Any) {
