@@ -40,6 +40,7 @@ class RedeemViewController: UIViewController {
     
     @IBOutlet weak var cashOutBtnContainerView: UIView!
     
+    @IBOutlet weak var externalCashoutBtn: UIButton!
     
     var titleArr = [String]()
     var abvValueArr = [String]()
@@ -48,6 +49,7 @@ class RedeemViewController: UIViewController {
     
     var beerchipTableVC = UIViewController()
      var cashOutVC = UIViewController()
+     var redeemBeerchipVC = UIViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +68,8 @@ class RedeemViewController: UIViewController {
         let beerchipStoryboard = UIStoryboard(name: "BeerchipStoryboard", bundle: Bundle(for: BeerchipViewController.self))
         beerchipTableVC =  beerchipStoryboard.instantiateViewController(withIdentifier: "BeerChipTableViewController") as! BeerChipTableViewController
         cashOutVC =  beerchipStoryboard.instantiateViewController(withIdentifier: "CashOutViewController") as! CashOutViewController
+        redeemBeerchipVC =  beerchipStoryboard.instantiateViewController(withIdentifier: "RedeemBeerchipViewController") as! RedeemBeerchipViewController
+        
         cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
         beerchipTableview.tableFooterView = UIView()
         
@@ -80,7 +84,13 @@ class RedeemViewController: UIViewController {
 
     @IBAction func redeemBtnAction(_ sender: Any) {
         
-     
+        self.addChildViewController(redeemBeerchipVC)
+        redeemBeerchipVC.view.frame = CGRect(x: 0, y: 177, width: 375, height: 410)
+        self.view.addSubview(redeemBeerchipVC.view)
+        redeemBeerchipVC.didMove(toParentViewController: self)
+        
+        externalCashoutBtn.setTitle("REDEEM", for: .normal)
+        
     }
     
     @IBAction func cashoutViewCashOutBtnAction(_ sender: Any) {
@@ -133,7 +143,6 @@ class RedeemViewController: UIViewController {
         beerchipTableVC.view.removeFromSuperview()
         beerchipTableVC.removeFromParentViewController()
     }
-
 }
 
 extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
