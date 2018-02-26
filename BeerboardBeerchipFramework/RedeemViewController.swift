@@ -38,12 +38,16 @@ class RedeemViewController: UIViewController {
     
     @IBOutlet weak var alphaView: UIView!
     
+    @IBOutlet weak var cashOutBtnContainerView: UIView!
+    
+    
     var titleArr = [String]()
     var abvValueArr = [String]()
     var locationArr = [String]()
     var locationAddreddArr = [String]()
     
     var beerchipTableVC = UIViewController()
+     var cashOutVC = UIViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,9 +63,9 @@ class RedeemViewController: UIViewController {
         beerMenuBtn.setTitleColor(UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 1.0), for: .normal)
         myBeerChipsBtn.setTitleColor(.white, for: .normal)
         
-        let beerchipStoryboard = UIStoryboard(name: "BeerchipStoryboard", bundle: Bundle(for: BeerChipTableViewController.self))
+        let beerchipStoryboard = UIStoryboard(name: "BeerchipStoryboard", bundle: Bundle(for: BeerchipViewController.self))
         beerchipTableVC =  beerchipStoryboard.instantiateViewController(withIdentifier: "BeerChipTableViewController") as! BeerChipTableViewController
-        
+        cashOutVC =  beerchipStoryboard.instantiateViewController(withIdentifier: "CashOutViewController") as! CashOutViewController
         cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
         beerchipTableview.tableFooterView = UIView()
         
@@ -77,8 +81,21 @@ class RedeemViewController: UIViewController {
      
     }
     
+    @IBAction func cashoutViewCashOutBtnAction(_ sender: Any) {
+        
+        cashOutVC.willMove(toParentViewController: nil)
+        cashOutVC.view.removeFromSuperview()
+        cashOutVC.removeFromParentViewController()
+    }
+    
+    
+    
     @IBAction func cashoutBnAction(_ sender: Any) {
         
+        self.addChildViewController(cashOutVC)
+        cashOutVC.view.frame = CGRect(x: 0, y: 162, width: 375, height: 445)
+        self.view.addSubview(cashOutVC.view)
+        cashOutVC.didMove(toParentViewController: self)
     }
     
     @IBAction func locationIndicatorBtnAction(_ sender: Any) {
