@@ -85,11 +85,12 @@ class RedeemViewController: UIViewController {
     @IBAction func redeemBtnAction(_ sender: Any) {
         
         self.addChildViewController(redeemBeerchipVC)
-        redeemBeerchipVC.view.frame = CGRect(x: 0, y: 120, width: 375, height: 445)
+        redeemBeerchipVC.view.frame = CGRect(x: 0, y: 120, width: 375, height: 487)
         self.view.addSubview(redeemBeerchipVC.view)
         redeemBeerchipVC.didMove(toParentViewController: self)
         cashOutBtnContainerView.isHidden = false
         externalCashoutBtn.setTitle("REDEEM", for: .normal)
+        redeemButton.setImage(nil, for: .normal)
         redeemButton.setTitle("CASH OUT", for: .normal)
         currentBalancedisplayLbl.text = "$15.00"
     }
@@ -105,6 +106,7 @@ class RedeemViewController: UIViewController {
             cashOutBtnContainerView.isHidden = true
             beerMenuBtnAction(self)
              redeemButton.setTitle("REDEEM", for: .normal)
+             redeemButton.setImage( #imageLiteral(resourceName: "view-redeem-icon")  , for: .normal)
             currentBalancedisplayLbl.text = "$15.00"
             myBeerchipsBtnAction(self)
             
@@ -123,7 +125,7 @@ class RedeemViewController: UIViewController {
         
         cashOutBtnContainerView.isHidden = false
         self.addChildViewController(cashOutVC)
-        cashOutVC.view.frame = CGRect(x: 0, y: 162, width: 375, height: 445)
+        cashOutVC.view.frame = CGRect(x: 0, y: 120, width: 375, height: 445)
         self.view.addSubview(cashOutVC.view)
         cashOutVC.didMove(toParentViewController: self)
     }
