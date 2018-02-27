@@ -32,7 +32,7 @@ class CashOutViewController: UIViewController,UICollectionViewDataSource,UIColle
     func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         
-        return CGSize(width: (self.view.frame.size.width-20.0)/2.0  , height: (self.view.frame.size.height)/3.0  )
+        return CGSize(width: (self.view.frame.size.width-30.0)/2.0  , height: (self.view.frame.size.height)/3.0  )
     }
 }
 

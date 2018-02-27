@@ -129,7 +129,7 @@ class RedeemViewController: UIViewController {
                 redeemBeerchipVC.removeFromParentViewController()
                 externalCashoutBtnContainerView.isHidden = true
                 redeemButton.setTitle("REDEEM", for: .normal)
-                redeemButton.setImage( #imageLiteral(resourceName: "view-redeem-icon")  , for: .normal)
+                redeemButton.setImage( UIImage(named:"view-redeem-icon.png")  , for: .normal)
                 currentBalancedisplayLbl.text = "$15.00"
                 isRedeemBeerchipVC = false
             }
