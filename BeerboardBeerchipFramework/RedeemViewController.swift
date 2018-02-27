@@ -54,6 +54,9 @@ class RedeemViewController: UIViewController {
     var isRedeemBeerchipVC = false
     var isCashoutVC = false
     
+    var isMyBeerChipsSelected = false
+    var isBeerMenuSelected = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,8 +92,7 @@ class RedeemViewController: UIViewController {
         
          if redeemButton.currentTitle == "REDEEM"
          {
-            
-              isRedeemBeerchipVC = true
+        isRedeemBeerchipVC = true
         self.addChildViewController(redeemBeerchipVC)
         redeemBeerchipVC.view.frame = CGRect(x: 0, y: 120, width: 375, height: 487)
         self.view.addSubview(redeemBeerchipVC.view)
@@ -107,7 +109,6 @@ class RedeemViewController: UIViewController {
             guard let imageObj  = UIImage(named:"view-redeem-icon.png") else{ return  }
             redeemButton.setImage( imageObj  , for: .normal)
             externalCashoutBtn.setTitle("CASH OUT", for: .normal)
-            
             externalCashoutBtnContainerView.isHidden = false
             self.addChildViewController(cashOutVC)
             cashOutVC.view.frame = CGRect(x: 0, y: 120, width: 375, height: 487)
@@ -115,14 +116,11 @@ class RedeemViewController: UIViewController {
             cashOutVC.didMove(toParentViewController: self)
         }
     }
-    
-    
-    
+
     @IBAction func externalCashoutBtnAction(_ sender: Any) {
         
         if externalCashoutBtn.currentTitle == "REDEEM"
         {
-            
             if isRedeemBeerchipVC
             {
                 redeemBeerchipVC.willMove(toParentViewController: nil)
@@ -134,8 +132,8 @@ class RedeemViewController: UIViewController {
                 redeemButton.setImage( imageObj  , for: .normal)
                 currentBalancedisplayLbl.text = "$15.00"
                 isRedeemBeerchipVC = false
+                isMyBeerChipsSelected = true
             }
-            
             if isCashoutVC
             {
                 cashOutVC.willMove(toParentViewController: nil)
@@ -143,29 +141,50 @@ class RedeemViewController: UIViewController {
                 cashOutVC.removeFromParentViewController()
                 externalCashoutBtnContainerView.isHidden = true
                 isCashoutVC = false
+                isBeerMenuSelected = true
             }
             
         }else{
-            
             if isRedeemBeerchipVC
             {
+                redeemBeerchipVC.willMove(toParentViewController: nil)
+                redeemBeerchipVC.view.removeFromSuperview()
+                redeemBeerchipVC.removeFromParentViewController()
+                isRedeemBeerchipVC = false
+                  isMyBeerChipsSelected = true
+            }
+            if isCashoutVC{
                 cashOutVC.willMove(toParentViewController: nil)
                 cashOutVC.view.removeFromSuperview()
                 cashOutVC.removeFromParentViewController()
                 externalCashoutBtnContainerView.isHidden = true
-                 isRedeemBeerchipVC = false
-            }
-            if isCashoutVC{
-                redeemBeerchipVC.willMove(toParentViewController: nil)
-                redeemBeerchipVC.view.removeFromSuperview()
-                redeemBeerchipVC.removeFromParentViewController()
                  isCashoutVC = false
+                 isBeerMenuSelected = true
             }
+        }
+        getSelectedMenu()
+    }
+    
+    func getSelectedMenu() {
+        if isMyBeerChipsSelected {
+            myBeerChipsBtn.setTitleColor(UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 1.0), for: .normal)
+            beerMenuBtn.setTitleColor(.white, for: .normal)
+            currentBalancedisplayLbl.text = "$15.00"
+            myBalanceDisplayLbl.text = "$15.00"
+            cashoutBtnView.isHidden = true
+            isMyBeerChipsSelected = false
+        }
+        if isBeerMenuSelected {
+            beerMenuBtn.setTitleColor(UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 1.0), for: .normal)
+            myBeerChipsBtn.setTitleColor(.white, for: .normal)
+            currentBalancedisplayLbl.text = "$7.50"
+            myBalanceDisplayLbl.text = "$7.50"
+            cashoutBtnView.isHidden = false
+            cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
+            isBeerMenuSelected = false
         }
     }
     
-    
-        
     @IBAction func cashoutBnAction(_ sender: Any) {
          isCashoutVC = true
         externalCashoutBtnContainerView.isHidden = false
@@ -173,6 +192,7 @@ class RedeemViewController: UIViewController {
         cashOutVC.view.frame = CGRect(x: 0, y: 120, width: 375, height: 487)
         self.view.addSubview(cashOutVC.view)
         cashOutVC.didMove(toParentViewController: self)
+         externalCashoutBtn.setTitle("CASH OUT", for: .normal)
     }
     
     @IBAction func locationIndicatorBtnAction(_ sender: Any) {
