@@ -104,7 +104,8 @@ class RedeemViewController: UIViewController {
          else{
              isCashoutVC = true
             redeemButton.setTitle("REDEEM", for: .normal)
-            redeemButton.setImage( #imageLiteral(resourceName: "view-redeem-icon")  , for: .normal)
+            guard let imageObj  = UIImage(named:"view-redeem-icon.png") else{ return  }
+            redeemButton.setImage( imageObj  , for: .normal)
             externalCashoutBtn.setTitle("CASH OUT", for: .normal)
             
             externalCashoutBtnContainerView.isHidden = false
@@ -129,7 +130,8 @@ class RedeemViewController: UIViewController {
                 redeemBeerchipVC.removeFromParentViewController()
                 externalCashoutBtnContainerView.isHidden = true
                 redeemButton.setTitle("REDEEM", for: .normal)
-                redeemButton.setImage( UIImage(named:"view-redeem-icon.png")  , for: .normal)
+                guard let imageObj  = UIImage(named:"view-redeem-icon.png") else{ return  }
+                redeemButton.setImage( imageObj  , for: .normal)
                 currentBalancedisplayLbl.text = "$15.00"
                 isRedeemBeerchipVC = false
             }
