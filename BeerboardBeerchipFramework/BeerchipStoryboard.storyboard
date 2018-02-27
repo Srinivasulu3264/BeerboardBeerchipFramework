@@ -584,7 +584,7 @@
                                             <color key="titleColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
                                         </state>
                                         <connections>
-                                            <action selector="cashoutViewCashOutBtnAction:" destination="8d3-u0-8kz" eventType="touchUpInside" id="bxv-FW-VP4"/>
+                                            <action selector="externalCashoutBtnAction:" destination="8d3-u0-8kz" eventType="touchUpInside" id="SPX-UU-MLO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -635,11 +635,11 @@
                         <outlet property="beerMenuBtn" destination="DcQ-ii-Ks6" id="P89-lW-EkZ"/>
                         <outlet property="beerchipTableview" destination="FjF-at-TZa" id="y5u-nE-n1y"/>
                         <outlet property="bottomView" destination="2sx-EW-g0s" id="faI-wA-GaY"/>
-                        <outlet property="cashOutBtnContainerView" destination="xfT-6i-IMN" id="FVj-pP-EHV"/>
                         <outlet property="cashoutBtn" destination="VHW-zV-twk" id="i3o-NV-OZz"/>
                         <outlet property="cashoutBtnView" destination="1Ut-wp-yJp" id="cpk-hx-KSg"/>
                         <outlet property="currentBalancedisplayLbl" destination="wF9-6g-cad" id="Crd-2r-py9"/>
                         <outlet property="externalCashoutBtn" destination="BG4-Ws-ku2" id="Hft-o0-sJu"/>
+                        <outlet property="externalCashoutBtnContainerView" destination="xfT-6i-IMN" id="atf-i9-eg6"/>
                         <outlet property="locationIndicatorBtn" destination="mP7-1c-CPT" id="c7V-1a-zzL"/>
                         <outlet property="locationTableView" destination="CIm-bV-vAH" id="vwi-gA-hCZ"/>
                         <outlet property="locationtableConatinerView" destination="w6l-cI-plJ" id="s45-aq-hEQ"/>
