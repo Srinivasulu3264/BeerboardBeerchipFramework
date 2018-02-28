@@ -180,6 +180,11 @@ class RedeemViewController: UIViewController {
             myBalanceDisplayLbl.text = "$15.00"
             cashoutBtnView.isHidden = true
             isMyBeerChipsSelected = false
+            
+            self.addChildViewController(beerchipTableVC)
+            beerchipTableVC.view.frame = CGRect(x: 0, y: 177, width: 375, height: 410)
+            self.view.addSubview(beerchipTableVC.view)
+            beerchipTableVC.didMove(toParentViewController: self)
         }
         
         if isBeerMenuSelected {
@@ -190,6 +195,10 @@ class RedeemViewController: UIViewController {
             cashoutBtnView.isHidden = false
             cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
             isBeerMenuSelected = false
+            
+            beerchipTableVC.willMove(toParentViewController: nil)
+            beerchipTableVC.view.removeFromSuperview()
+            beerchipTableVC.removeFromParentViewController()
         }
     }
     
