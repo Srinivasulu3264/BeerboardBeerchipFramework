@@ -17,6 +17,7 @@ class RedeemviewBeerchipTableSubTitlesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var abvValueLbl: UILabel!
     
+    @IBOutlet weak var beerDisplayImageView: UIImageView!
     
     
 

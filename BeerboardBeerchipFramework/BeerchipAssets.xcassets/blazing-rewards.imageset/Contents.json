@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "blazing-rewards.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "blazing-rewards.png",
       "scale" : "2x"
     },
     {

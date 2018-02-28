@@ -46,6 +46,8 @@ class RedeemViewController: UIViewController {
     var abvValueArr = [String]()
     var locationArr = [String]()
     var locationAddreddArr = [String]()
+    var beerMenuImagesArr = [String]()
+    
     
     var beerchipTableVC = UIViewController()
     var cashOutVC = UIViewController()
@@ -68,6 +70,7 @@ class RedeemViewController: UIViewController {
         locationIndicatorBtn.layer.cornerRadius = 8.0
         
         titleArr = ["BUD LIGHT" , "BUD LIGHT LIME" ,"BUDWISER"]
+        beerMenuImagesArr = ["beer-logo-bud-light" , "beer-logo-bud-light-lime" ,"beer-logo-budweiser"]
         abvValueArr = ["4.2%","4.2%","5%"]
         beerMenuBtn.setTitleColor(UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 1.0), for: .normal)
         myBeerChipsBtn.setTitleColor(.white, for: .normal)
@@ -271,6 +274,8 @@ extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
             let  cell  = tableView.dequeueReusableCell(withIdentifier: "subTitleCell") as! RedeemviewBeerchipTableSubTitlesTableViewCell
             cell.abvValueLbl.text = abvValueArr[indexPath.row-1]
             cell.beerTitleLable.text = titleArr[indexPath.row-1]
+            let imgName = beerMenuImagesArr[indexPath.row-1]
+            cell.beerDisplayImageView.image = UIImage(named: imgName)
             cell.beerSubTitleLbl.text = "StLouis,MD"
             return cell
         }
