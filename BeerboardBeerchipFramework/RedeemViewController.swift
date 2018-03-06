@@ -340,6 +340,11 @@ extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
                 cell.beerTitleLable.text = titleArr[indexPath.row-1]
                 let imgName = beerMenuImagesArr[indexPath.row-1]
                 cell.beerDisplayImageView.image = UIImage(named: imgName)
+                
+                if indexPath.row == 3{
+                 cell.beerchipsImageView.image = nil
+                }
+                
                 cell.beerSubTitleLbl.text = "StLouis,MD"
                 return cell
             }

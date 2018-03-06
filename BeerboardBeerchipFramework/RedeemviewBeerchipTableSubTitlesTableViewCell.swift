@@ -19,6 +19,8 @@ class RedeemviewBeerchipTableSubTitlesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var beerDisplayImageView: UIImageView!
     
+    @IBOutlet weak var beerchipsImageView: UIImageView!
+    
     
 
     override func awakeFromNib() {
