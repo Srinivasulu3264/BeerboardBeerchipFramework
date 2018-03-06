@@ -278,6 +278,11 @@ class RedeemViewController: UIViewController {
         beerchipTableVC.willMove(toParentViewController: nil)
         beerchipTableVC.view.removeFromSuperview()
         beerchipTableVC.removeFromParentViewController()
+        
+        if isTableClicked{
+            isBeerinfoVCRemoving = true
+            beerInfoVCAddingAndRemoving()
+        }
     }
 }
 
