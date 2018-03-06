@@ -160,7 +160,6 @@ class RedeemViewController: UIViewController {
             }
             
         }else{
-            
             if isRedeemBeerchipVC
             {
                 redeemBeerchipVC.willMove(toParentViewController: nil)
