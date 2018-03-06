@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol beerchipTableVCProtocol {
+    func addBeerinfoVCFromBeerchipTableVC()
+}
+
 class BeerChipTableViewController: UIViewController {
     
     var beerNamesArr = [String]()
     var beerCostArr = [String]()
+    var beerchipTableDelegate : beerchipTableVCProtocol?
 
     @IBOutlet weak var beerchipTable: UITableView!
     override func viewDidLoad() {
@@ -36,6 +41,11 @@ extension BeerChipTableViewController:UITableViewDataSource,UITableViewDelegate
         cell.beerCostLbl.text =  beerCostArr[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        beerchipTableDelegate?.addBeerinfoVCFromBeerchipTableVC()
     }
     
 }

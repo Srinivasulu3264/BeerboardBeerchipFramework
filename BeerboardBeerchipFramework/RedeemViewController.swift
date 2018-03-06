@@ -48,13 +48,17 @@ class RedeemViewController: UIViewController {
     var locationAddreddArr = [String]()
     var beerMenuImagesArr = [String]()
     
-    
-    var beerchipTableVC = UIViewController()
+    var beerchipTableVC = BeerChipTableViewController()
     var cashOutVC = UIViewController()
     var redeemBeerchipVC = UIViewController()
+    var beerInfoVC = BeerInfoViewController()
     
     var isRedeemBeerchipVC = false
     var isCashoutVC = false
+    var isTableClicked = false
+    
+    var isBeerinfoVCAdding = false
+    var isBeerinfoVCRemoving = false
     
     var isMyBeerChipsSelected = false
     var isBeerMenuSelected = false
@@ -79,6 +83,11 @@ class RedeemViewController: UIViewController {
         beerchipTableVC =  beerchipStoryboard.instantiateViewController(withIdentifier: "BeerChipTableViewController") as! BeerChipTableViewController
         cashOutVC =  beerchipStoryboard.instantiateViewController(withIdentifier: "CashOutViewController") as! CashOutViewController
         redeemBeerchipVC =  beerchipStoryboard.instantiateViewController(withIdentifier: "RedeemBeerchipViewController") as! RedeemBeerchipViewController
+        beerInfoVC =  beerchipStoryboard.instantiateViewController(withIdentifier: "BeerInfoViewController") as! BeerInfoViewController
+        
+        beerInfoVC.beerInfoDelegate = self
+        beerchipTableVC.beerchipTableDelegate = self
+        
         
         cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
         beerchipTableview.tableFooterView = UIView()
@@ -158,7 +167,6 @@ class RedeemViewController: UIViewController {
                 redeemBeerchipVC.view.removeFromSuperview()
                 redeemBeerchipVC.removeFromParentViewController()
                 isRedeemBeerchipVC = false
-                
                 isMyBeerChipsSelected = true
             }
             if isCashoutVC{
@@ -167,15 +175,20 @@ class RedeemViewController: UIViewController {
                 cashOutVC.removeFromParentViewController()
                 externalCashoutBtnContainerView.isHidden = true
                 isCashoutVC = false
-                
                 isBeerMenuSelected = true
             }
         }
         
+        if isTableClicked {
+            isBeerinfoVCRemoving = true
+            beerInfoVCAddingAndRemoving()
+            isTableClicked = false
+        }
         getSelectedMenu()
     }
     
     func getSelectedMenu() {
+        
         if isMyBeerChipsSelected {
             myBeerChipsBtn.setTitleColor(UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 1.0), for: .normal)
             beerMenuBtn.setTitleColor(.white, for: .normal)
@@ -202,6 +215,24 @@ class RedeemViewController: UIViewController {
             beerchipTableVC.willMove(toParentViewController: nil)
             beerchipTableVC.view.removeFromSuperview()
             beerchipTableVC.removeFromParentViewController()
+        }
+    }
+    
+    func beerInfoVCAddingAndRemoving()  {
+        
+        if isBeerinfoVCAdding {
+            self.addChildViewController(beerInfoVC)
+            beerInfoVC.view.frame = CGRect(x: 0, y: 177, width: 375, height: 410)
+            self.view.addSubview(beerInfoVC.view)
+            beerInfoVC.didMove(toParentViewController: self)
+            isBeerinfoVCAdding = false
+        }
+        
+        if isBeerinfoVCRemoving{
+            beerInfoVC.willMove(toParentViewController: nil)
+            beerInfoVC.view.removeFromSuperview()
+            beerInfoVC.removeFromParentViewController()
+            isBeerinfoVCRemoving = false
         }
     }
     
@@ -244,7 +275,37 @@ class RedeemViewController: UIViewController {
         myBalanceDisplayLbl.text = "$7.50"
         cashoutBtnView.isHidden = false
         cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
-        
+        beerchipTableVC.willMove(toParentViewController: nil)
+        beerchipTableVC.view.removeFromSuperview()
+        beerchipTableVC.removeFromParentViewController()
+    }
+}
+
+
+extension RedeemViewController:beerInfoVCProtocol{
+    func removeBeerinfoVC() {
+        print("beerinfo Backbtn Called")
+        isBeerinfoVCRemoving = true
+        beerInfoVCAddingAndRemoving()
+    }
+}
+
+extension RedeemViewController:beerchipTableVCProtocol{
+    func addBeerinfoVCFromBeerchipTableVC() {
+        print(" beerchipTableVC  table clicked")
+        isBeerinfoVCAdding = true
+        beerInfoVCAddingAndRemoving()
+        setBeerMenubtnSelected()
+        isTableClicked = true
+    }
+    
+    func setBeerMenubtnSelected()  {
+        beerMenuBtn.setTitleColor(UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 1.0), for: .normal)
+        myBeerChipsBtn.setTitleColor(.white, for: .normal)
+        currentBalancedisplayLbl.text = "$7.50"
+        myBalanceDisplayLbl.text = "$7.50"
+        cashoutBtnView.isHidden = false
+        cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
         beerchipTableVC.willMove(toParentViewController: nil)
         beerchipTableVC.view.removeFromSuperview()
         beerchipTableVC.removeFromParentViewController()
@@ -254,33 +315,32 @@ class RedeemViewController: UIViewController {
 extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == beerchipTableview {
-        return  titleArr.count+1
+            return  titleArr.count+1
         }else{
             return locationArr.count
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-         if tableView == beerchipTableview {
-        if indexPath.row == 0 {
-            let   cell  = tableView.dequeueReusableCell(withIdentifier: "titleCell") as!RedeemViewBeerchipTableTitleTableViewCell
-            cell.beerchipsLbl.text = "BEERCHIPS"
-            cell.abvLabel.text = "ABV"
-            return cell
+        if tableView == beerchipTableview {
+            if indexPath.row == 0 {
+                let   cell  = tableView.dequeueReusableCell(withIdentifier: "titleCell") as!RedeemViewBeerchipTableTitleTableViewCell
+                cell.beerchipsLbl.text = "BEERCHIPS"
+                cell.abvLabel.text = "ABV"
+                return cell
+            }
+            else{
+                let  cell  = tableView.dequeueReusableCell(withIdentifier: "subTitleCell") as! RedeemviewBeerchipTableSubTitlesTableViewCell
+                cell.abvValueLbl.text = abvValueArr[indexPath.row-1]
+                cell.beerTitleLable.text = titleArr[indexPath.row-1]
+                let imgName = beerMenuImagesArr[indexPath.row-1]
+                cell.beerDisplayImageView.image = UIImage(named: imgName)
+                cell.beerSubTitleLbl.text = "StLouis,MD"
+                return cell
+            }
         }
         else{
-            let  cell  = tableView.dequeueReusableCell(withIdentifier: "subTitleCell") as! RedeemviewBeerchipTableSubTitlesTableViewCell
-            cell.abvValueLbl.text = abvValueArr[indexPath.row-1]
-            cell.beerTitleLable.text = titleArr[indexPath.row-1]
-            let imgName = beerMenuImagesArr[indexPath.row-1]
-            cell.beerDisplayImageView.image = UIImage(named: imgName)
-            cell.beerSubTitleLbl.text = "StLouis,MD"
-            return cell
-        }
-      }
-         else{
             let   cell  = tableView.dequeueReusableCell(withIdentifier: "locationCell") as!LocationTableViewCell
             cell.locationNameLbl.text = locationArr[indexPath.row]
             cell.locationAddessLbl.text = locationAddreddArr[indexPath.row]
@@ -291,6 +351,9 @@ extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if tableView == beerchipTableview {
+            isBeerinfoVCAdding = true
+            beerInfoVCAddingAndRemoving()
+            isTableClicked = true
             
         }else{
             let locationName = locationArr[indexPath.row]

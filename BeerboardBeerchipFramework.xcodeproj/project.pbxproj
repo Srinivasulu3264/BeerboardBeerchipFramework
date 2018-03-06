@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8683B2EA204E6B2100D795C5 /* BeerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B2E9204E6B2100D795C5 /* BeerInfoViewController.swift */; };
 		869A34EB203FCF0D00461C68 /* RedeemViewBeerchipTableTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A34EA203FCF0D00461C68 /* RedeemViewBeerchipTableTitleTableViewCell.swift */; };
 		869A34EF203FD13A00461C68 /* RedeemviewBeerchipTableSubTitlesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A34EE203FD13A00461C68 /* RedeemviewBeerchipTableSubTitlesTableViewCell.swift */; };
 		869A34F1203FD2A800461C68 /* BeerChipTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A34F0203FD2A800461C68 /* BeerChipTableViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8683B2E9204E6B2100D795C5 /* BeerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerInfoViewController.swift; sourceTree = "<group>"; };
 		869A34EA203FCF0D00461C68 /* RedeemViewBeerchipTableTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemViewBeerchipTableTitleTableViewCell.swift; sourceTree = "<group>"; };
 		869A34EE203FD13A00461C68 /* RedeemviewBeerchipTableSubTitlesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemviewBeerchipTableSubTitlesTableViewCell.swift; sourceTree = "<group>"; };
 		869A34F0203FD2A800461C68 /* BeerChipTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerChipTableViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				869A3530204003AC00461C68 /* LocationTableViewCell.swift */,
 				86A934652043DB2B000696BE /* CashOutViewController.swift */,
 				86A934672043FC6C000696BE /* RedeemBeerchipViewController.swift */,
+				8683B2E9204E6B2100D795C5 /* BeerInfoViewController.swift */,
 				86CC7C58203C140B00126896 /* BeerchipStoryboard.storyboard */,
 				86CC7C5A203C1A1700126896 /* BeerchipAssets.xcassets */,
 				86CC7C40203C132300126896 /* Info.plist */,
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8683B2EA204E6B2100D795C5 /* BeerInfoViewController.swift in Sources */,
 				869A34EB203FCF0D00461C68 /* RedeemViewBeerchipTableTitleTableViewCell.swift in Sources */,
 				869A3531204003AC00461C68 /* LocationTableViewCell.swift in Sources */,
 				86CC7C97203C257D00126896 /* RedeemViewController.swift in Sources */,
