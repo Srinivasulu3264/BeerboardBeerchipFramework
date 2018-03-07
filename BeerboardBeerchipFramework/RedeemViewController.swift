@@ -347,6 +347,14 @@ extension RedeemViewController:redeemBeerchipVCProtocol{
         redeemBeerchipVC.view.removeFromSuperview()
         redeemBeerchipVC.removeFromParentViewController()
         externalCashoutBtnContainerView.isHidden = true
+        cashOutVC.willMove(toParentViewController: nil)
+        cashOutVC.view.removeFromSuperview()
+        cashOutVC.removeFromParentViewController()
+        beerchipTableVC.willMove(toParentViewController: nil)
+        beerchipTableVC.view.removeFromSuperview()
+        beerchipTableVC.removeFromParentViewController()
+        isBeerinfoVCRemoving = true
+        beerInfoVCAddingAndRemoving()
         
         isRedeemBeerchipLocation = true
     }
