@@ -106,7 +106,12 @@ class RedeemViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let  userdefaultsLocation = UserDefaults.standard.string(forKey: "location")
+        var userdefaultsLocation = UserDefaults.standard.string(forKey: "location")
+        
+        if userdefaultsLocation == nil {
+            userdefaultsLocation = "MANHATTAN, NY"
+        }
+        
         locationIndicatorBtn.setTitle(userdefaultsLocation, for: .normal)
     }
 

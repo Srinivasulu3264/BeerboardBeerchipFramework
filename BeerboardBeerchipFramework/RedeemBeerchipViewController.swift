@@ -49,8 +49,14 @@ class RedeemBeerchipViewController: UIViewController,UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let  userdefaultsLocation = UserDefaults.standard.string(forKey: "location")
+        var userdefaultsLocation = UserDefaults.standard.string(forKey: "location")
+        
+        if userdefaultsLocation == nil {
+            userdefaultsLocation = "MANHATTAN, NY"
+        }
+        
         redeemBeerchipVCLocationIndicatorBtn.setTitle(userdefaultsLocation, for: .normal)
+        
     }
     
     @IBAction func redeemBeerchipVCLocationIndicationBtnAction(_ sender: Any) {
