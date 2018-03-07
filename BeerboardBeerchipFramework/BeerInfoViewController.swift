@@ -9,6 +9,7 @@ import UIKit
 
 protocol beerInfoVCProtocol {
     func removeBeerinfoVC()
+     func displayRedeemBeerchipVC()
 }
 
 class BeerInfoViewController: UIViewController {
@@ -32,7 +33,7 @@ class BeerInfoViewController: UIViewController {
     
     @IBAction func redeemBeerchipBtnAction(_ sender: Any) {
         
-        
+         beerInfoDelegate?.displayRedeemBeerchipVC()
     }
     
     

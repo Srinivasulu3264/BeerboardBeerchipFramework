@@ -50,7 +50,7 @@ class RedeemViewController: UIViewController {
     
     var beerchipTableVC = BeerChipTableViewController()
     var cashOutVC = UIViewController()
-    var redeemBeerchipVC = UIViewController()
+    var redeemBeerchipVC = RedeemBeerchipViewController()
     var beerInfoVC = BeerInfoViewController()
     
     var isRedeemBeerchipVC = false
@@ -62,6 +62,9 @@ class RedeemViewController: UIViewController {
     
     var isMyBeerChipsSelected = false
     var isBeerMenuSelected = false
+    
+     var isRedeemBeerchipLocation = false
+     var usedefaults = UserDefaults.standard
     
     
     override func viewDidLoad() {
@@ -87,7 +90,7 @@ class RedeemViewController: UIViewController {
         
         beerInfoVC.beerInfoDelegate = self
         beerchipTableVC.beerchipTableDelegate = self
-        
+        redeemBeerchipVC.redeemBeerchipVCDelegate = self
         
         cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
         beerchipTableview.tableFooterView = UIView()
@@ -98,6 +101,13 @@ class RedeemViewController: UIViewController {
         alphaView.isHidden = true
         locationtableConatinerView.isHidden = true
         externalCashoutBtnContainerView.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let  userdefaultsLocation = UserDefaults.standard.string(forKey: "location")
+        locationIndicatorBtn.setTitle(userdefaultsLocation, for: .normal)
     }
 
     @IBAction func redeemBtnAction(_ sender: Any) {
@@ -235,7 +245,6 @@ class RedeemViewController: UIViewController {
         }
     }
     
-    
     @IBAction func cashoutBnAction(_ sender: Any) {
         isCashoutVC = true
         externalCashoutBtnContainerView.isHidden = false
@@ -287,6 +296,12 @@ class RedeemViewController: UIViewController {
 
 
 extension RedeemViewController:beerInfoVCProtocol{
+    func displayRedeemBeerchipVC() {
+        isBeerinfoVCRemoving = true
+        beerInfoVCAddingAndRemoving()
+        redeemBtnAction(self)
+    }
+    
     func removeBeerinfoVC() {
         print("beerinfo Backbtn Called")
         isBeerinfoVCRemoving = true
@@ -315,6 +330,24 @@ extension RedeemViewController:beerchipTableVCProtocol{
         beerchipTableVC.removeFromParentViewController()
     }
 }
+
+extension RedeemViewController:redeemBeerchipVCProtocol{
+    
+    func displayLocationTable() {
+        print( " location tablecalled ")
+        alphaView.isHidden = false
+        locationtableConatinerView.isHidden = false
+        
+        redeemBeerchipVC.willMove(toParentViewController: nil)
+        redeemBeerchipVC.view.removeFromSuperview()
+        redeemBeerchipVC.removeFromParentViewController()
+        externalCashoutBtnContainerView.isHidden = true
+        
+        isRedeemBeerchipLocation = true
+    }
+}
+
+
 
 extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -369,6 +402,15 @@ extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
             locationIndicatorBtn.setTitle(locationName, for: .normal)
             alphaView.isHidden = true
             locationtableConatinerView.isHidden = true
+            
+            usedefaults.set(locationName, forKey: "location")
+            
+            if isRedeemBeerchipLocation{
+                
+                UserDefaults.standard.set(locationName, forKey: "location")
+                redeemButton.setTitle("REDEEM", for: .normal)
+                redeemBtnAction(self)
+            }
         }
     }
 }

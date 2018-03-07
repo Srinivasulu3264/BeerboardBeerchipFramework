@@ -8,20 +8,57 @@
 
 import UIKit
 
-class RedeemBeerchipViewController: UIViewController {
 
+protocol redeemBeerchipVCProtocol {
+    
+    func displayLocationTable()
+    
+}
+
+
+class RedeemBeerchipViewController: UIViewController,UITextFieldDelegate {
+
+    
+    @IBOutlet weak var receiptIDTxtfield: UITextField!
+    @IBOutlet weak var redeemBeerchipVCLocationIndicatorBtn: UIButton!
+    
+    var redeemBeerchipVCDelegate : redeemBeerchipVCProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+          redeemBeerchipVCLocationIndicatorBtn.layer.cornerRadius = 8.0
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
+        view.addGestureRecognizer(tap)
+        receiptIDTxtfield.delegate = self
+        
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    @objc func dismissKeyboard(_ sender: UITapGestureRecognizer){
+        view.endEditing(true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        receiptIDTxtfield.resignFirstResponder()
+        return false
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let  userdefaultsLocation = UserDefaults.standard.string(forKey: "location")
+        redeemBeerchipVCLocationIndicatorBtn.setTitle(userdefaultsLocation, for: .normal)
+    }
+    
+    @IBAction func redeemBeerchipVCLocationIndicationBtnAction(_ sender: Any) {
+        
+        redeemBeerchipVCDelegate?.displayLocationTable()
+        
+    }
+    
     /*
     // MARK: - Navigation
 

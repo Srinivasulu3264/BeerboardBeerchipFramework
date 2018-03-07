@@ -235,7 +235,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.71494346857070923" green="0.909107506275177" blue="0.44203096628189087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="jbJ-2l-iKg" firstAttribute="leading" secondItem="DcQ-ii-Ks6" secondAttribute="trailing" id="5Ul-me-DC8"/>
                                     <constraint firstItem="cBx-Sz-vjy" firstAttribute="top" secondItem="TDo-GZ-Lsm" secondAttribute="bottom" constant="8" id="7Yr-Oc-DI9"/>
@@ -338,14 +337,14 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEER CHIPS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYv-p8-Nim">
-                                                            <rect key="frame" x="214" y="2" width="95" height="25.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="234.5" y="2" width="79.5" height="25.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4f8-pD-5FX">
-                                                            <rect key="frame" x="334" y="2" width="33" height="25.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="339" y="2" width="28" height="25.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -382,26 +381,26 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beerchip-icon" translatesAutoresizingMaskIntoConstraints="NO" id="YBz-E3-opr">
-                                                            <rect key="frame" x="239" y="5" width="40" height="40"/>
+                                                            <rect key="frame" x="249" y="5" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="I9y-IX-c4Y"/>
                                                                 <constraint firstAttribute="width" constant="40" id="Lku-Lf-B9c"/>
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beer-logo-schells" translatesAutoresizingMaskIntoConstraints="NO" id="oZD-7e-7Cj">
-                                                            <rect key="frame" x="136" y="5" width="53" height="40"/>
+                                                            <rect key="frame" x="156" y="5" width="53" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="53" id="t1M-sF-dWf"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tilte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="XFv-jo-LZN">
-                                                            <rect key="frame" x="8" y="8" width="107" height="21"/>
+                                                            <rect key="frame" x="8" y="8" width="127" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfj-gt-L6h">
-                                                            <rect key="frame" x="8" y="32" width="107" height="15"/>
+                                                            <rect key="frame" x="8" y="32" width="127" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15" id="Qck-zN-KAE"/>
                                                             </constraints>
@@ -416,12 +415,12 @@
                                                         <constraint firstItem="oZD-7e-7Cj" firstAttribute="leading" secondItem="Jfj-gt-L6h" secondAttribute="trailing" constant="21" id="LHz-bR-fwg"/>
                                                         <constraint firstItem="YBz-E3-opr" firstAttribute="top" secondItem="oZD-7e-7Cj" secondAttribute="top" id="Lg4-rk-szY"/>
                                                         <constraint firstItem="YBz-E3-opr" firstAttribute="centerY" secondItem="e0h-mW-NLj" secondAttribute="centerY" id="LzL-6f-YB1"/>
-                                                        <constraint firstItem="YBz-E3-opr" firstAttribute="leading" secondItem="oZD-7e-7Cj" secondAttribute="trailing" constant="50" id="MHq-2C-jIR"/>
+                                                        <constraint firstItem="YBz-E3-opr" firstAttribute="leading" secondItem="oZD-7e-7Cj" secondAttribute="trailing" constant="40" id="MHq-2C-jIR"/>
                                                         <constraint firstItem="oZD-7e-7Cj" firstAttribute="centerY" secondItem="e0h-mW-NLj" secondAttribute="centerY" id="WDm-og-tCA"/>
                                                         <constraint firstItem="rIi-QO-VRB" firstAttribute="centerY" secondItem="e0h-mW-NLj" secondAttribute="centerY" id="YLO-0r-NWM"/>
                                                         <constraint firstAttribute="trailing" secondItem="rIi-QO-VRB" secondAttribute="trailing" constant="8" id="YVb-HP-gZZ"/>
                                                         <constraint firstItem="Jfj-gt-L6h" firstAttribute="leading" secondItem="e0h-mW-NLj" secondAttribute="leading" constant="8" id="bh1-Z6-4ye"/>
-                                                        <constraint firstItem="rIi-QO-VRB" firstAttribute="leading" secondItem="YBz-E3-opr" secondAttribute="trailing" constant="50" id="qtq-Kw-eay"/>
+                                                        <constraint firstItem="rIi-QO-VRB" firstAttribute="leading" secondItem="YBz-E3-opr" secondAttribute="trailing" constant="40" id="qtq-Kw-eay"/>
                                                         <constraint firstItem="Jfj-gt-L6h" firstAttribute="top" secondItem="XFv-jo-LZN" secondAttribute="bottom" constant="3" id="val-Rr-N7K"/>
                                                         <constraint firstItem="XFv-jo-LZN" firstAttribute="leading" secondItem="e0h-mW-NLj" secondAttribute="leading" constant="8" id="wPh-OL-cPG"/>
                                                     </constraints>
@@ -441,7 +440,6 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.65161351519999999" green="0.91086238620000004" blue="0.81458413839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="27s-nc-ZXU" secondAttribute="trailing" id="49e-Qj-wdU"/>
                                     <constraint firstAttribute="bottom" secondItem="FjF-at-TZa" secondAttribute="bottom" id="JmA-rZ-cAL"/>
@@ -495,7 +493,6 @@
                                         <rect key="frame" x="235" y="15.5" width="130" height="50"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.71494346860000002" green="0.90910750630000003" blue="0.44203096629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="VHW-zV-twk" firstAttribute="centerY" secondItem="2sx-EW-g0s" secondAttribute="centerY" id="8g3-sC-RFH"/>
                                     <constraint firstItem="VHW-zV-twk" firstAttribute="top" secondItem="rRO-HF-rn9" secondAttribute="top" id="DDP-Cc-RQJ"/>
@@ -724,7 +721,7 @@
                                         <connections>
                                             <outlet property="beerCostLbl" destination="bvL-Ph-kkn" id="hBo-vv-Dv9"/>
                                             <outlet property="beerSubTitleLbl" destination="Uid-jd-ynJ" id="sdf-d5-YxW"/>
-                                            <outlet property="beerTitleLbl" destination="Uid-jd-ynJ" id="cA8-eV-UCn"/>
+                                            <outlet property="beerTitleLbl" destination="QP6-A6-CZt" id="ngw-ey-CIM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1259,10 +1256,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EI-nU-kaW">
-                                        <rect key="frame" x="227" y="68" width="140" height="26"/>
+                                        <rect key="frame" x="207" y="68" width="160" height="26"/>
                                         <color key="backgroundColor" red="1" green="0.49847649700000002" blue="0.26420443910000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="Gm1-bQ-RCF"/>
+                                            <constraint firstAttribute="width" constant="160" id="Gm1-bQ-RCF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1270,6 +1267,9 @@
                                         <state key="normal" title="MANHATTAN,NY" image="location-icon">
                                             <color key="titleColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
                                         </state>
+                                        <connections>
+                                            <action selector="redeemBeerchipVCLocationIndicationBtnAction:" destination="lIb-JD-RIU" eventType="touchUpInside" id="EIX-Wk-TfR"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RECEIPT ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Oq-1g-9Lg">
                                         <rect key="frame" x="4" y="109" width="107" height="24"/>
@@ -1277,13 +1277,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6SA-Sp-rJ2">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Receipt ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6SA-Sp-rJ2">
                                         <rect key="frame" x="4" y="141" width="367" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="iWQ-Ms-UkK"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unsure where these items are?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54V-iq-vh1">
@@ -1358,6 +1358,10 @@
                         <viewLayoutGuide key="safeArea" id="ru0-Oq-rw8"/>
                     </view>
                     <size key="freeformSize" width="375" height="445"/>
+                    <connections>
+                        <outlet property="receiptIDTxtfield" destination="6SA-Sp-rJ2" id="aiy-OP-99o"/>
+                        <outlet property="redeemBeerchipVCLocationIndicatorBtn" destination="9EI-nU-kaW" id="m0l-9R-cPb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfh-zM-6go" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
