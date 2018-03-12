@@ -53,8 +53,6 @@ class RedeemViewController: UIViewController {
     var redeemBeerchipVC = RedeemBeerchipViewController()
     var beerInfoVC = BeerInfoViewController()
     
-    var isRedeemBeerchipVC = false
-    var isCashoutVC = false
     var isTableClicked = false
     
     var isBeerchipTableVCAdding = false
@@ -69,13 +67,10 @@ class RedeemViewController: UIViewController {
     var isBeerinfoVCAdding = false
     var isBeerinfoVCRemoving = false
     
-    var isMyBeerChipsSelected = false
-    var isBeerMenuSelected = false
+    var isRedeemBeerchipLocation = false
+    var usedefaults = UserDefaults.standard
     
-     var isRedeemBeerchipLocation = false
-     var usedefaults = UserDefaults.standard
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -123,192 +118,11 @@ class RedeemViewController: UIViewController {
         
         locationIndicatorBtn.setTitle(userdefaultsLocation, for: .normal)
     }
-
-    @IBAction func redeemBtnAction(_ sender: Any) {
-        
-        if redeemButton.currentTitle == "REDEEM"
-        {
-            isRedeemBeerchipVC = true
-            isBeerchipTableVCRemoving = true
-            beerChipTableVCAddingAndRemoving()
-            isRedeemBeerchipVCAdding = true
-            redeemBeerchipVCAddingAndRemoving()
-            externalCashoutBtnContainerView.isHidden = false
-            externalCashoutBtn.setTitle("REDEEM", for: .normal)
-            redeemButton.setImage(nil, for: .normal)
-            redeemButton.setTitle("CASH OUT", for: .normal)
-            currentBalancedisplayLbl.text = "$15.00"
-        }
-        else{
-            isCashoutVC = true
-            redeemButton.setTitle("REDEEM", for: .normal)
-            guard let imageObj  = UIImage(named:"view-redeem-icon.png") else{ return  }
-            redeemButton.setImage( imageObj  , for: .normal)
-            externalCashoutBtn.setTitle("CASH OUT", for: .normal)
-            
-            externalCashoutBtnContainerView.isHidden = false
-            
-            isRedeemBeerchipVCRemoving = true
-            redeemBeerchipVCAddingAndRemoving()
-            
-            isCashoutVCAdding = true
-            cashoutVCAddingAndRemoving()
-        }
-    }
-
-    @IBAction func externalCashoutBtnAction(_ sender: Any) {
-        
-        if externalCashoutBtn.currentTitle == "REDEEM"
-        {
-            if isRedeemBeerchipVC
-            {
-                isRedeemBeerchipVCRemoving = true
-                redeemBeerchipVCAddingAndRemoving()
-                externalCashoutBtnContainerView.isHidden = true
-                redeemButton.setTitle("REDEEM", for: .normal)
-                guard let imageObj  = UIImage(named:"view-redeem-icon.png") else{ return  }
-                redeemButton.setImage( imageObj  , for: .normal)
-                currentBalancedisplayLbl.text = "$15.00"
-                isRedeemBeerchipVC = false
-                isMyBeerChipsSelected = true
-            }
-            
-            if isCashoutVC
-            {
-                isCashoutVCRemoving = true
-                cashoutVCAddingAndRemoving()
-                externalCashoutBtnContainerView.isHidden = true
-                isCashoutVC = false
-                isBeerMenuSelected = true
-            }
-        }else{
-            if isRedeemBeerchipVC
-            {
-               isRedeemBeerchipVCRemoving = true
-                redeemBeerchipVCAddingAndRemoving()
-                isRedeemBeerchipVC = false
-                isMyBeerChipsSelected = true
-            }
-            if isCashoutVC{
-              isCashoutVCRemoving = true
-                cashoutVCAddingAndRemoving()
-                externalCashoutBtnContainerView.isHidden = true
-                isCashoutVC = false
-                isBeerMenuSelected = true
-            }
-        }
-        
-        if isTableClicked {
-            isBeerinfoVCRemoving = true
-            beerInfoVCAddingAndRemoving()
-            isTableClicked = false
-        }
-        showSelectedMenu()
-    }
-    
-    func showSelectedMenu() {
-        
-        if isMyBeerChipsSelected {
-            myBeerChipsBtn.setTitleColor(UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 1.0), for: .normal)
-            beerMenuBtn.setTitleColor(.white, for: .normal)
-            currentBalancedisplayLbl.text = "$15.00"
-            myBalanceDisplayLbl.text = "$15.00"
-            cashoutBtnView.isHidden = true
-            isMyBeerChipsSelected = false
-            
-            isBeerchipTableVCAdding = true
-            beerChipTableVCAddingAndRemoving()
-        }
-        
-        if isBeerMenuSelected {
-            beerMenuBtn.setTitleColor(UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 1.0), for: .normal)
-            myBeerChipsBtn.setTitleColor(.white, for: .normal)
-            currentBalancedisplayLbl.text = "$7.50"
-            myBalanceDisplayLbl.text = "$7.50"
-            cashoutBtnView.isHidden = false
-            cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
-            isBeerMenuSelected = false
-            
-            isBeerchipTableVCRemoving = true
-            beerChipTableVCAddingAndRemoving()
-        }
-    }
-    
-    func beerChipTableVCAddingAndRemoving()  {
-        
-        if isBeerchipTableVCAdding {
-            self.addChildViewController(beerchipTableVC)
-             beerchipTableVC.view.frame = CGRect(x: 0, y: 177, width:  UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height-257))
-            self.view.addSubview(beerchipTableVC.view)
-            beerchipTableVC.didMove(toParentViewController: self)
-            isBeerchipTableVCAdding = false
-        }
-        
-        if isBeerchipTableVCRemoving{
-            beerchipTableVC.willMove(toParentViewController: nil)
-            beerchipTableVC.view.removeFromSuperview()
-            beerchipTableVC.removeFromParentViewController()
-            isBeerchipTableVCRemoving = false
-        }
-    }
-    
-    func cashoutVCAddingAndRemoving()  {
-        
-        if isCashoutVCAdding {
-            self.addChildViewController(cashOutVC)
-                 cashOutVC.view.frame = CGRect(x: 0, y: 120, width:  UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height-180))
-            self.view.addSubview(cashOutVC.view)
-            cashOutVC.didMove(toParentViewController: self)
-            isCashoutVCAdding = false
-        }
-        
-        if isCashoutVCRemoving{
-            cashOutVC.willMove(toParentViewController: nil)
-            cashOutVC.view.removeFromSuperview()
-            cashOutVC.removeFromParentViewController()
-            isCashoutVCRemoving = false
-        }
-    }
     
     
-    func redeemBeerchipVCAddingAndRemoving()  {
-        
-        if isRedeemBeerchipVCAdding {
-            self.addChildViewController(redeemBeerchipVC)
-            redeemBeerchipVC.view.frame = CGRect(x: 0, y: 120, width: UIScreen.main.bounds.width, height:  (UIScreen.main.bounds.height-180))
-            self.view.addSubview(redeemBeerchipVC.view)
-            redeemBeerchipVC.didMove(toParentViewController: self)
-            isRedeemBeerchipVCAdding = false
-        }
-        
-        if isRedeemBeerchipVCRemoving{
-            redeemBeerchipVC.willMove(toParentViewController: nil)
-            redeemBeerchipVC.view.removeFromSuperview()
-            redeemBeerchipVC.removeFromParentViewController()
-            isRedeemBeerchipVCRemoving = false
-        }
-    }
-    
-    func beerInfoVCAddingAndRemoving()  {
-        
-        if isBeerinfoVCAdding {
-            self.addChildViewController(beerInfoVC)
-           beerInfoVC.view.frame = CGRect(x: 0, y: 177, width:  UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height-257))
-            self.view.addSubview(beerInfoVC.view)
-            beerInfoVC.didMove(toParentViewController: self)
-            isBeerinfoVCAdding = false
-        }
-        
-        if isBeerinfoVCRemoving{
-            beerInfoVC.willMove(toParentViewController: nil)
-            beerInfoVC.view.removeFromSuperview()
-            beerInfoVC.removeFromParentViewController()
-            isBeerinfoVCRemoving = false
-        }
-    }
     
     @IBAction func cashoutBnAction(_ sender: Any) {
-        isCashoutVC = true
+        
         externalCashoutBtnContainerView.isHidden = false
         isBeerchipTableVCRemoving = true
         beerChipTableVCAddingAndRemoving()
@@ -342,6 +156,7 @@ class RedeemViewController: UIViewController {
         myBalanceDisplayLbl.text = "$7.50"
         cashoutBtnView.isHidden = false
         cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
+        
         isBeerchipTableVCRemoving = true
         beerChipTableVCAddingAndRemoving()
         
@@ -350,6 +165,160 @@ class RedeemViewController: UIViewController {
             beerInfoVCAddingAndRemoving()
         }
     }
+
+    @IBAction func redeemBtnAction(_ sender: Any) {
+        
+        if redeemButton.currentTitle == "REDEEM"
+        {
+            isBeerchipTableVCRemoving = true
+            beerChipTableVCAddingAndRemoving()
+            
+            isRedeemBeerchipVCAdding = true
+            redeemBeerchipVCAddingAndRemoving()
+            
+            isCashoutVCRemoving = true
+            cashoutVCAddingAndRemoving()
+            
+            externalCashoutBtnContainerView.isHidden = false
+            externalCashoutBtn.setTitle("REDEEM", for: .normal)
+            redeemButton.setImage(nil, for: .normal)
+            redeemButton.setTitle("CASH OUT", for: .normal)
+            currentBalancedisplayLbl.text = "$15.00"
+        }
+        else{
+            
+            redeemButton.setTitle("REDEEM", for: .normal)
+            guard let imageObj  = UIImage(named:"view-redeem-icon.png") else{ return  }
+            redeemButton.setImage( imageObj  , for: .normal)
+            externalCashoutBtn.setTitle("CASH OUT", for: .normal)
+            
+            externalCashoutBtnContainerView.isHidden = false
+            
+            isRedeemBeerchipVCRemoving = true
+            redeemBeerchipVCAddingAndRemoving()
+            
+            isCashoutVCAdding = true
+            cashoutVCAddingAndRemoving()
+        }
+    }
+
+    @IBAction func externalCashoutBtnAction(_ sender: Any) {
+        
+        
+        if externalCashoutBtn.currentTitle == "REDEEM"
+        {
+            
+            isRedeemBeerchipVCRemoving = true
+            redeemBeerchipVCAddingAndRemoving()
+            
+            isBeerchipTableVCAdding = true
+            beerChipTableVCAddingAndRemoving()
+            
+            externalCashoutBtnContainerView.isHidden = true
+            redeemButton.setTitle("REDEEM", for: .normal)
+            guard let imageObj  = UIImage(named:"view-redeem-icon.png") else{ return  }
+            redeemButton.setImage( imageObj  , for: .normal)
+            currentBalancedisplayLbl.text = "$15.00"
+            myBeerChipsBtn.setTitleColor(UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 1.0), for: .normal)
+            beerMenuBtn.setTitleColor(.white, for: .normal)
+            myBalanceDisplayLbl.text = "$15.00"
+            
+            cashoutBtnView.isHidden = true
+            
+        }else{
+            
+            isCashoutVCRemoving = true
+            cashoutVCAddingAndRemoving()
+            
+            beerMenuBtn.setTitleColor(UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 1.0), for: .normal)
+            
+            myBeerChipsBtn.setTitleColor(.white, for: .normal)
+            currentBalancedisplayLbl.text = "$7.50"
+            myBalanceDisplayLbl.text = "$7.50"
+            
+            externalCashoutBtnContainerView.isHidden = true
+            cashoutBtnView.isHidden = false
+        }
+        
+        
+        if isTableClicked {
+            isBeerinfoVCRemoving = true
+            beerInfoVCAddingAndRemoving()
+            isTableClicked = false
+        }
+    }
+    
+    
+    func beerChipTableVCAddingAndRemoving()  {
+        
+        if isBeerchipTableVCAdding {
+            self.addChildViewController(beerchipTableVC)
+             beerchipTableVC.view.frame = CGRect(x: 0, y: 177, width:  UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height-257))
+            self.view.addSubview(beerchipTableVC.view)
+            beerchipTableVC.didMove(toParentViewController: self)
+            isBeerchipTableVCAdding = false
+        }
+        
+        if isBeerchipTableVCRemoving{
+            beerchipTableVC.willMove(toParentViewController: nil)
+            beerchipTableVC.view.removeFromSuperview()
+            beerchipTableVC.removeFromParentViewController()
+            isBeerchipTableVCRemoving = false
+        }
+    }
+    
+    func cashoutVCAddingAndRemoving()  {
+        
+        if isCashoutVCAdding {
+            self.addChildViewController(cashOutVC)
+            cashOutVC.view.frame = CGRect(x: 0, y: 120, width:  UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height-180))
+            self.view.addSubview(cashOutVC.view)
+            cashOutVC.didMove(toParentViewController: self)
+            isCashoutVCAdding = false
+        }
+        if isCashoutVCRemoving{
+            cashOutVC.willMove(toParentViewController: nil)
+            cashOutVC.view.removeFromSuperview()
+            cashOutVC.removeFromParentViewController()
+            isCashoutVCRemoving = false
+        }
+    }
+    
+    
+    func redeemBeerchipVCAddingAndRemoving()  {
+        
+        if isRedeemBeerchipVCAdding {
+            self.addChildViewController(redeemBeerchipVC)
+            redeemBeerchipVC.view.frame = CGRect(x: 0, y: 120, width: UIScreen.main.bounds.width, height:  (UIScreen.main.bounds.height-180))
+            self.view.addSubview(redeemBeerchipVC.view)
+            redeemBeerchipVC.didMove(toParentViewController: self)
+            isRedeemBeerchipVCAdding = false
+        }
+        if isRedeemBeerchipVCRemoving{
+            redeemBeerchipVC.willMove(toParentViewController: nil)
+            redeemBeerchipVC.view.removeFromSuperview()
+            redeemBeerchipVC.removeFromParentViewController()
+            isRedeemBeerchipVCRemoving = false
+        }
+    }
+    
+    func beerInfoVCAddingAndRemoving()  {
+        
+        if isBeerinfoVCAdding {
+            self.addChildViewController(beerInfoVC)
+           beerInfoVC.view.frame = CGRect(x: 0, y: 177, width:  UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height-257))
+            self.view.addSubview(beerInfoVC.view)
+            beerInfoVC.didMove(toParentViewController: self)
+            isBeerinfoVCAdding = false
+        }
+        if isBeerinfoVCRemoving{
+            beerInfoVC.willMove(toParentViewController: nil)
+            beerInfoVC.view.removeFromSuperview()
+            beerInfoVC.removeFromParentViewController()
+            isBeerinfoVCRemoving = false
+        }
+    }
+
 }
 
 
@@ -456,7 +425,6 @@ extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
             isBeerinfoVCAdding = true
             beerInfoVCAddingAndRemoving()
             isTableClicked = true
-            
         }else{
             let locationName = locationArr[indexPath.row]
             locationIndicatorBtn.setTitle(locationName, for: .normal)
