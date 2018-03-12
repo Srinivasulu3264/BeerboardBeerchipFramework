@@ -120,7 +120,7 @@ class RedeemViewController: UIViewController {
         {
             isRedeemBeerchipVC = true
             self.addChildViewController(redeemBeerchipVC)
-            redeemBeerchipVC.view.frame = CGRect(x: 0, y: 120, width: 375, height: 487)
+            redeemBeerchipVC.view.frame = CGRect(x: 0, y: 120, width: UIScreen.main.bounds.width, height:  (UIScreen.main.bounds.height-180))
             self.view.addSubview(redeemBeerchipVC.view)
             redeemBeerchipVC.didMove(toParentViewController: self)
             externalCashoutBtnContainerView.isHidden = false
@@ -138,7 +138,7 @@ class RedeemViewController: UIViewController {
             
             externalCashoutBtnContainerView.isHidden = false
             self.addChildViewController(cashOutVC)
-            cashOutVC.view.frame = CGRect(x: 0, y: 120, width: 375, height: 487)
+            cashOutVC.view.frame = CGRect(x: 0, y: 120, width:  UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height-180))
             self.view.addSubview(cashOutVC.view)
             cashOutVC.didMove(toParentViewController: self)
         }
@@ -212,7 +212,7 @@ class RedeemViewController: UIViewController {
             isMyBeerChipsSelected = false
             
             self.addChildViewController(beerchipTableVC)
-            beerchipTableVC.view.frame = CGRect(x: 0, y: 177, width: 375, height: 410)
+           beerchipTableVC.view.frame = CGRect(x: 0, y: 177, width:  UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height-257))
             self.view.addSubview(beerchipTableVC.view)
             beerchipTableVC.didMove(toParentViewController: self)
         }
@@ -236,7 +236,7 @@ class RedeemViewController: UIViewController {
         
         if isBeerinfoVCAdding {
             self.addChildViewController(beerInfoVC)
-            beerInfoVC.view.frame = CGRect(x: 0, y: 177, width: 375, height: 410)
+           beerInfoVC.view.frame = CGRect(x: 0, y: 177, width:  UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height-257))
             self.view.addSubview(beerInfoVC.view)
             beerInfoVC.didMove(toParentViewController: self)
             isBeerinfoVCAdding = false
@@ -254,7 +254,7 @@ class RedeemViewController: UIViewController {
         isCashoutVC = true
         externalCashoutBtnContainerView.isHidden = false
         self.addChildViewController(cashOutVC)
-        cashOutVC.view.frame = CGRect(x: 0, y: 120, width: 375, height: 487)
+       cashOutVC.view.frame = CGRect(x: 0, y: 120, width:  UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height-180))
         self.view.addSubview(cashOutVC.view)
         cashOutVC.didMove(toParentViewController: self)
         externalCashoutBtn.setTitle("CASH OUT", for: .normal)
@@ -274,7 +274,7 @@ class RedeemViewController: UIViewController {
         cashoutBtnView.isHidden = true
         
         self.addChildViewController(beerchipTableVC)
-        beerchipTableVC.view.frame = CGRect(x: 0, y: 177, width: 375, height: 410)
+       beerchipTableVC.view.frame = CGRect(x: 0, y: 177, width:  UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height-257))
         self.view.addSubview(beerchipTableVC.view)
         beerchipTableVC.didMove(toParentViewController: self)
     }

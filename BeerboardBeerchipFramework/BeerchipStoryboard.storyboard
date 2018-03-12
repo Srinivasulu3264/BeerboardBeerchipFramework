@@ -599,8 +599,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="2sx-EW-g0s" secondAttribute="bottom" id="10x-9B-004"/>
                             <constraint firstItem="NbN-lG-MiO" firstAttribute="bottom" secondItem="16z-05-9u0" secondAttribute="bottom" id="29a-kc-Q2m"/>
-                            <constraint firstItem="NbN-lG-MiO" firstAttribute="bottom" secondItem="2sx-EW-g0s" secondAttribute="bottom" id="33k-wF-CGU"/>
                             <constraint firstItem="NbN-lG-MiO" firstAttribute="trailing" secondItem="bNF-az-Rot" secondAttribute="trailing" id="5Iu-lc-1dZ"/>
                             <constraint firstItem="2sx-EW-g0s" firstAttribute="trailing" secondItem="NbN-lG-MiO" secondAttribute="trailing" id="9EX-Tm-Fq7"/>
                             <constraint firstItem="2sx-EW-g0s" firstAttribute="top" secondItem="rtc-sb-nUg" secondAttribute="bottom" id="Dbg-VA-dlV"/>
