@@ -394,13 +394,13 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tilte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="XFv-jo-LZN">
-                                                            <rect key="frame" x="8" y="8" width="127" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="8" y="8" width="127" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfj-gt-L6h">
-                                                            <rect key="frame" x="8" y="32" width="127" height="15"/>
+                                                            <rect key="frame" x="8" y="30.5" width="127" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15" id="Qck-zN-KAE"/>
                                                             </constraints>
@@ -747,7 +747,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgn-tO-W7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="666" y="-688"/>
+            <point key="canvasLocation" x="826" y="-632"/>
         </scene>
         <!--Beer Info View Controller-->
         <scene sceneID="aj5-Ch-e5E">
@@ -1031,7 +1031,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cNC-HG-tAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="-192"/>
+            <point key="canvasLocation" x="825" y="-189"/>
         </scene>
         <!--Cash Out View Controller-->
         <scene sceneID="UEi-yq-aXH">
@@ -1366,7 +1366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfh-zM-6go" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="473" y="549"/>
+            <point key="canvasLocation" x="854" y="275"/>
         </scene>
     </scenes>
     <resources>

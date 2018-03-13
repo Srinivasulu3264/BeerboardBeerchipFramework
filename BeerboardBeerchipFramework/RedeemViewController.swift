@@ -144,8 +144,12 @@ class RedeemViewController: UIViewController {
         currentBalancedisplayLbl.text = "$15.00"
         myBalanceDisplayLbl.text = "$15.00"
         cashoutBtnView.isHidden = true
+        
         isBeerchipTableVCAdding = true
         beerChipTableVCAddingAndRemoving()
+        
+        isBeerinfoVCRemoving = true
+        beerInfoVCAddingAndRemoving()
     }
     
     
@@ -157,7 +161,6 @@ class RedeemViewController: UIViewController {
         myBalanceDisplayLbl.text = "$7.50"
         cashoutBtnView.isHidden = false
         cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
-        
         isBeerchipTableVCRemoving = true
         beerChipTableVCAddingAndRemoving()
         
@@ -228,7 +231,6 @@ class RedeemViewController: UIViewController {
             cashoutVCAddingAndRemoving()
             
             beerMenuBtn.setTitleColor(UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 1.0), for: .normal)
-            
             myBeerChipsBtn.setTitleColor(.white, for: .normal)
             currentBalancedisplayLbl.text = "$7.50"
             myBalanceDisplayLbl.text = "$7.50"
@@ -236,7 +238,6 @@ class RedeemViewController: UIViewController {
             externalCashoutBtnContainerView.isHidden = true
             cashoutBtnView.isHidden = false
         }
-        
         
         if isTableClicked {
             isBeerinfoVCRemoving = true
@@ -315,7 +316,6 @@ class RedeemViewController: UIViewController {
             isBeerinfoVCRemoving = false
         }
     }
-
 }
 
 
@@ -431,7 +431,6 @@ extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
             usedefaults.set(locationName, forKey: "location")
             
             if isRedeemBeerchipLocation{
-                
                 UserDefaults.standard.set(locationName, forKey: "location")
                 redeemButton.setTitle("REDEEM", for: .normal)
                 redeemBtnAction(self)
