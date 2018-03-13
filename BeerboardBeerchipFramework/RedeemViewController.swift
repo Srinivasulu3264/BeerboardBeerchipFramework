@@ -81,7 +81,7 @@ class RedeemViewController: UIViewController {
         locationIndicatorBtn.layer.cornerRadius = 8.0
         
         titleArr = ["BUD LIGHT" , "BUD LIGHT LIME" ,"BUDWISER","COORS LIGHT" ,"RECKARD'S RED"]
-        beerMenuImagesArr = ["beer-logo-bud-light" , "beer-logo-bud-light-lime" ,"beer-logo-budweiser"]
+        beerMenuImagesArr = ["beer-logo-bud-light","beer-logo-bud-light-lime" ,"beer-logo-budweiser","beer-logo-bud-light","beer-logo-bud-light-lime"]
         abvValueArr = ["4.2%","4.2%","5%","4.2%","5.2%"]
         beerMenuBtn.setTitleColor(UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 1.0), for: .normal)
         myBeerChipsBtn.setTitleColor(.white, for: .normal)
