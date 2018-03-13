@@ -80,9 +80,9 @@ class RedeemViewController: UIViewController {
         redeemButton.layer.cornerRadius = 8.0
         locationIndicatorBtn.layer.cornerRadius = 8.0
         
-        titleArr = ["BUD LIGHT" , "BUD LIGHT LIME" ,"BUDWISER"]
+        titleArr = ["BUD LIGHT" , "BUD LIGHT LIME" ,"BUDWISER","COORS LIGHT" ,"RECKARD'S RED"]
         beerMenuImagesArr = ["beer-logo-bud-light" , "beer-logo-bud-light-lime" ,"beer-logo-budweiser"]
-        abvValueArr = ["4.2%","4.2%","5%"]
+        abvValueArr = ["4.2%","4.2%","5%","4.2%","5.2%"]
         beerMenuBtn.setTitleColor(UIColor.init(red: 255.0/255.0, green: 83.0/255.0, blue: 43.0/255.0, alpha: 1.0), for: .normal)
         myBeerChipsBtn.setTitleColor(.white, for: .normal)
         
@@ -99,8 +99,9 @@ class RedeemViewController: UIViewController {
         cashoutBtnView.backgroundColor = UIColor.init(red: 59.0/255.0, green: 26.0/255.0, blue: 14.0/255.0, alpha: 1.0)
         beerchipTableview.tableFooterView = UIView()
         
-        locationArr = ["hyderabad","banglore","chennai","mumbai","delhi","vizag","MANHATHAN"]
-        locationAddreddArr = ["155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001"]
+        locationArr = ["Hyderabad, HYD","Banglore,BNG ","Chennai ,CN","Mumbai ,MB","Delhi,DL","Vizag,VZ","MANHATHAN,NY","Kolkatta,KK","Pune,Pn","Surath,SR","Nagpur,NP","Kanpur,KP"]
+        
+        locationAddreddArr = ["155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001","155 W ,33rd street ,New York, NY 10001"]
         
         alphaView.isHidden = true
         locationtableConatinerView.isHidden = true
@@ -160,10 +161,6 @@ class RedeemViewController: UIViewController {
         isBeerchipTableVCRemoving = true
         beerChipTableVCAddingAndRemoving()
         
-        if isTableClicked{
-            isBeerinfoVCRemoving = true
-            beerInfoVCAddingAndRemoving()
-        }
     }
 
     @IBAction func redeemBtnAction(_ sender: Any) {

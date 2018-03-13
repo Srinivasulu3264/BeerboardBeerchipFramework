@@ -23,8 +23,8 @@ class BeerChipTableViewController: UIViewController {
         super.viewDidLoad()
 
         beerchipTable.tableFooterView = UIView()
-        beerNamesArr = ["BUD LIGHT" , "BUD LIGHT LIME" ,"BUDWISER"]
-        beerCostArr = ["$11.00","$2.00","$2.00"]
+        beerNamesArr = ["BUD LIGHT" , "BUD LIGHT LIME" ,"BUDWISER","COORS LIGHT" ,"RECKARD'S RED"]
+        beerCostArr = ["$7.00","$2.00","$2.00","$2.00","$2.00"]
         // Do any additional setup after loading the view.
     }
 }
