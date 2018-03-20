@@ -106,6 +106,9 @@ class RedeemViewController: UIViewController {
         alphaView.isHidden = true
         locationtableConatinerView.isHidden = true
         externalCashoutBtnContainerView.isHidden = true
+        
+        let index = NSIndexPath(row: 6, section: 0)
+        self.locationTableView.selectRow(at: index as IndexPath, animated: true, scrollPosition: UITableViewScrollPosition.middle)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -412,6 +415,11 @@ extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
             let   cell  = tableView.dequeueReusableCell(withIdentifier: "locationCell") as!LocationTableViewCell
             cell.locationNameLbl.text = locationArr[indexPath.row]
             cell.locationAddessLbl.text = locationAddreddArr[indexPath.row]
+            
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = UIColor.orange
+            cell.selectedBackgroundView = backgroundView
+            
             return cell
         }
     }
@@ -435,6 +443,10 @@ extension RedeemViewController:UITableViewDelegate,UITableViewDataSource{
                 redeemButton.setTitle("REDEEM", for: .normal)
                 redeemBtnAction(self)
             }
+            
+            let cell = locationTableView.cellForRow(at: indexPath) as! LocationTableViewCell
+            cell.locationNameLbl.textColor = .white
+            cell.locationAddessLbl.textColor = .white
         }
     }
 }
